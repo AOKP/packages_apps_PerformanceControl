@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="minfree" translatable="false">
+		<item>@string/size_25_mb</item>
+		<item>@string/size_50_mb</item>
+		<item>@string/size_75_mb</item>
+		<item>@string/size_80_mb</item>
+		<item>@string/size_100_mb</item>
+	</string-array>
+	<string-array name="minfree_values" translatable="false">
+		<item>1536,2048,4096,5120,5632,6144</item>
+		<item>2560,3840,6400,7680,10240,12800</item>
+		<item>2560,3840,6400,10240,12800,19200</item>
+		<item>2048,3072,6144,15360,17920,20480</item>
+		<item>2560,3840,6400,12800,12800,25600</item>
+	</string-array>
+	<string-array name="read_ahead" translatable="false">
+		<item>@string/size_128_kb</item>
+		<item>@string/size_256_kb</item>
+		<item>@string/size_512_kb</item>
+		<item>@string/size_1024_kb</item>
+		<item>@string/size_2048_kb</item>
+		<item>@string/size_4096_kb</item>
+	</string-array>
+	<string-array name="read_ahead_values" translatable="false">
+		<item>128</item>
+		<item>256</item>
+		<item>512</item>
+		<item>1024</item>
+		<item>2048</item>
+		<item>4096</item>
+	</string-array>
+</resources>

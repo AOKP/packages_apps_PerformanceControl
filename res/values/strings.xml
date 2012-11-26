@@ -1,0 +1,79 @@
+<resources>
+	<string name="app_name">Performance Control</string>
+	<!-- Main tabs -->
+	<string name="tab_cpu_settings">"CPU Settings"</string>
+	<string name="tab_cpu_profiles">CPU Profiles</string>
+	<string name="tab_time_in_state">"Time In State"</string>
+	<string name="tab_voltage_settings">"Voltage Settings"</string>
+	<string name="tab_cpu_info">CPU Info</string>
+	<!-- CPU settings -->
+	<string name="current_speed">Current Speed</string>
+	<string name="current_max">Current max:</string>
+	<string name="current_min">Current min:</string>
+	<string name="governor">Governor</string>
+	<string name="io">IO Scheduler</string>
+	<string name="sob">Set on boot</string>
+	<string name="ok">OK</string>
+	<string name="cancel">Cancel</string>
+	<!-- Other settings -->
+	<string name="prefcat_free_memory">FREE MEMORY</string>
+	<string name="prefcat_tweaks">KERNEL TWEAKS (IF SUPPORTED)</string>
+	<string name="prefcat_misc_short">MISC</string>
+	<string name="prefcat_read_ahead">SD READ AHEAD</string>
+	<string name="prefcat_vm_settings">VM SETTINGS</string>
+	<string name="dt_free_memory">Minfree Taskkiller</string>
+	<string name="dt_read_ahead">SD Read Ahead</string>
+	<string name="pt_free_memory">Free memory</string>
+	<string name="ps_free_memory">Amount of RAM the minfree taskkiller will keep | Current: %s</string>
+	<string name="ps_free_memory_boot">Apply the amount above at boot</string>
+	<string name="pt_read_ahead">SD read ahead</string>
+	<string name="ps_read_ahead">Amount to read ahead on SDCard reads in kb | Current: %s</string>
+	<string name="ps_read_ahead_boot">Apply the amount above at boot</string>
+	<string name="pt_fast_charge_boot">Fast Charge</string>
+	<string name="ps_fast_charge_boot">Enable fast charge at boot</string>
+	<string name="fast_charge_warning">YOU WILL NOT BE ABLE TO CONNECT TO YOUR PC AFTER EACH REBOOT!\n\nThis setting will set fast charge ON after each reboot. While fast charge is on, you can *only* charge your phone!</string>
+	<string name="fast_charge_notification_title">Fast Charge is ON!</string>
+	<string name="fast_charge_notification_message">Phone is in charge-only mode!</string>
+	<string name="size_25_mb">25mb</string>
+	<string name="size_50_mb">50mb</string>
+	<string name="size_75_mb">75mb</string>
+	<string name="size_80_mb">80mb</string>
+	<string name="size_100_mb">100mb</string>
+	<string name="size_128_kb">128kb</string>
+	<string name="size_256_kb">256kb</string>
+	<string name="size_512_kb">512kb</string>
+	<string name="size_1024_kb">1024kb</string>
+	<string name="size_2048_kb">2048kb</string>
+	<string name="size_4096_kb">4096kb</string>
+	<!-- Voltage control -->
+	<string name="ps_volt_mhz_voltage">" MHz Voltage"</string>
+	<string name="ps_volt_save">"Save"</string>
+	<string name="ps_volt_current_voltage">"Current voltage: "</string>
+	<string name="ps_volt_setting_to_apply">"Setting to apply: "</string>
+	<string name="pt_volt_control">Voltage control</string>
+	<string name="ps_volt_control">Set voltages for each frequency</string>
+	<string name="apply_values">Apply values</string>
+	<string name="freq">Frequency</string>
+	<string name="current">mV current</string>
+	<string name="saved">mV saved</string>
+	<string name="not_supported">Your kernel does not support voltage control</string>
+	<!-- VM settings -->
+	<string name="ps_vm_set_on_boot">If enabled will restore all vm settings on reboot</string>
+	<string name="dirty_ratio_title">Dirty ratio</string>
+	<string name="dirty_background_title">Dirty background ratio</string>
+	<string name="dirty_expire_title">Dirty expire centisecs</string>
+	<string name="dirty_writeback_title">Dirty writeback centisecs</string>
+	<string name="min_free_title">Minfree kbytes</string>
+	<string name="overcommit_title">Overcommit ratio</string>
+	<string name="swappiness_title">Swappiness</string>
+	<string name="vfs_title">VFS cache pressure</string>
+	<!-- Time in state -->
+	<string name="time_in_state">TIME IN STATE</string>
+	<string name="unused_cpu_states">UNUSED CPU STATES</string>
+	<string name="total_state_time">TOTAL STATE TIME</string>
+	<string name="no_states_file_found">No states file found. Are you sure your phone is compatible?\n\nIf you are running a custom ROM or kernel, try contacting its developer to inform him that the states file is not readable.</string>
+	<!-- CPU info -->
+	<string name="kernel_info">LINUX KERNEL INFORMATION</string>
+	<string name="cpu_info">CPU INFORMATION</string>
+	<string name="mem_info">MEMORY INFORMATION</string>
+</resources>
