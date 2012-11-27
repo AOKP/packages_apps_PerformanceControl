@@ -191,14 +191,11 @@ public class CPUSettings extends Fragment
     @Override
     public void onProgressChanged(SeekBar seekBar,int progress, boolean fromUser) {
         if(fromUser) {
-            switch(seekBar.getId()) {
-                case R.id.max_slider:
-                    setMaxSpeed(seekBar, progress);
-                    break;
-                case R.id.min_slider:
-                    setMinSpeed(seekBar, progress);
-                    break;
-            }
+        	if (seekBar.getId() == R.id.max_slider) {
+        		setMaxSpeed(seekBar, progress);
+        	} else if (seekBar.getId() == R.id.min_slider) {
+        		setMinSpeed(seekBar, progress);
+        	}
         }
     }
 

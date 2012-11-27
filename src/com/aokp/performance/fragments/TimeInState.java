@@ -99,11 +99,9 @@ public class TimeInState extends Fragment implements Constants {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch(item.getItemId()) {
-        case R.id.refresh:
-            refreshData();
-            break;
-        }
+    	if (item.getItemId() == R.id.refresh){ 
+    		refreshData();
+    	}
         return true;
     }
 

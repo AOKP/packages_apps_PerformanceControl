@@ -70,11 +70,9 @@ public class CPUInfo extends Fragment implements Constants {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch(item.getItemId()) {
-        case R.id.refresh:
-            updateData();
-            break;
-        }
+    	if (item.getItemId() == R.id.refresh){ 
+    		updateData();
+    	}
         return true;
     }
 

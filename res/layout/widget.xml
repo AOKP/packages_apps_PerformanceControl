@@ -31,24 +31,24 @@ Copyright (C) 2012  James Roberts
 			android:layout_width="wrap_content"
 			android:layout_height="0dp"
 			android:layout_weight="1"
-			android:textSize="11dp" />
+			android:textSize="11sp" />
 		<TextView
 			android:id="@+id/min"
 			android:layout_width="wrap_content"
 			android:layout_height="0dp"
 			android:layout_weight="1"
-			android:textSize="11dp" />
+			android:textSize="11sp" />
 		<TextView
 			android:id="@+id/gov"
 			android:layout_width="wrap_content"
 			android:layout_height="0dp"
 			android:layout_weight="1"
-			android:textSize="11dp" />
+			android:textSize="11sp" />
 		<TextView
 			android:id="@+id/io"
 			android:layout_width="wrap_content"
 			android:layout_height="0dp"
 			android:layout_weight="1"
-			android:textSize="11dp" />
+			android:textSize="11sp" />
 	</LinearLayout>
 </FrameLayout>
