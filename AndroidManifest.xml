@@ -23,6 +23,13 @@
 				<action android:name="android.intent.action.BOOT_COMPLETED" />
 			</intent-filter>
 		</receiver>
+		<receiver android:name=".widget.PCWidget" android:label="Performance Control">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="com.aokp.performance.ACTION_FREQS_CHANGED" />
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_info" />
+        </receiver>
 		<service android:name=".service.BootService" />
 	</application>
 </manifest>

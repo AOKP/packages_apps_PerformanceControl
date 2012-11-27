@@ -18,6 +18,9 @@ package com.aokp.performance.fragments;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.appwidget.AppWidgetManager;
+import android.content.ComponentName;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
@@ -43,6 +46,7 @@ import com.aokp.performance.R;
 import com.aokp.performance.util.Constants;
 import com.aokp.performance.util.CMDProcessor;
 import com.aokp.performance.util.Helpers;
+import com.aokp.performance.widget.PCWidget;
 
 public class CPUSettings extends Fragment
         implements SeekBar.OnSeekBarChangeListener, Constants {
@@ -233,6 +237,7 @@ public class CPUSettings extends Fragment
             final SharedPreferences.Editor editor = mPreferences.edit();
             editor.putString(PREF_GOV, selected);
             editor.commit();
+            updateAppWidget();
         }
 
         public void onNothingSelected(AdapterView<?> parent) {
@@ -244,9 +249,11 @@ public class CPUSettings extends Fragment
         public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
             String selected = parent.getItemAtPosition(pos).toString();
             new CMDProcessor().su.runWaitFor("busybox echo " + selected + " > " + IO_SCHEDULER_PATH);
+            
             final SharedPreferences.Editor editor = mPreferences.edit();
             editor.putString(PREF_IO, selected);
             editor.commit();
+            updateAppWidget();
         }
 
         public void onNothingSelected(AdapterView<?> parent) {
@@ -291,6 +298,7 @@ public class CPUSettings extends Fragment
         final SharedPreferences.Editor editor = mPreferences.edit();
         editor.putString(PREF_MAX_CPU, current);
         editor.commit();
+        updateAppWidget();
     }
 
     public void setMinSpeed(SeekBar seekBar, int progress) {
@@ -307,6 +315,7 @@ public class CPUSettings extends Fragment
         final SharedPreferences.Editor editor = mPreferences.edit();
         editor.putString(PREF_MIN_CPU, current);
         editor.commit();
+        updateAppWidget();
     }
 
     private String toMHz(String mhzString) {
@@ -339,4 +348,14 @@ public class CPUSettings extends Fragment
             mCurFreq.setText(toMHz((String) msg.obj));
         }
     };
+    
+    private void updateAppWidget() {
+        AppWidgetManager widgetManager = AppWidgetManager.getInstance(getActivity());
+        ComponentName widgetComponent = new ComponentName(getActivity(), PCWidget.class);
+        int[] widgetIds = widgetManager.getAppWidgetIds(widgetComponent);
+        Intent update = new Intent();
+        update.setAction("com.aokp.performance.ACTION_FREQS_CHANGED");
+        update.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, widgetIds);
+        getActivity().sendBroadcast(update);
+    }
 }
