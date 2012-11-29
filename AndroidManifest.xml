@@ -1,35 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-	package="com.aokp.performance"
-	android:versionCode="1"
+	package="com.aokp.performance" android:versionCode="1"
 	android:versionName="1.0.1">
-	<uses-sdk
-		android:minSdkVersion="14"
-		android:targetSdkVersion="17" />
+
+	<uses-sdk android:minSdkVersion="14" android:targetSdkVersion="17" />
+
 	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 	<uses-permission android:name="android.permission.WRITE_SETTINGS" />
-	<application
-		android:icon="@drawable/ic_launcher"
-		android:label="@string/app_name"
-	    android:allowBackup="true"
-		android:theme="@style/Theme.Dark" >
-		<activity android:name=".activities.MainActivity" >
+
+	<application android:allowBackup="true" android:icon="@drawable/ic_launcher"
+		android:label="@string/app_name" android:theme="@style/Theme_Dark">
+		<activity android:name=".activities.MainActivity">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN" />
+
 				<category android:name="android.intent.category.LAUNCHER" />
 			</intent-filter>
 		</activity>
-		<receiver android:name=".service.BootReceiver" >
+		<activity android:name=".activities.PCSettings" />
+
+		<receiver android:name=".service.BootReceiver">
 			<intent-filter>
 				<action android:name="android.intent.action.BOOT_COMPLETED" />
 			</intent-filter>
 		</receiver>
 		<receiver android:name=".widget.PCWidget" android:label="Performance Control">
-            <intent-filter>
-                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-                <action android:name="com.aokp.performance.ACTION_FREQS_CHANGED" />
-            </intent-filter>
-            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_info" />
-        </receiver>
+			<intent-filter>
+				<action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+				<action android:name="com.aokp.performance.ACTION_FREQS_CHANGED" />
+			</intent-filter>
+
+			<meta-data android:name="android.appwidget.provider"
+				android:resource="@xml/widget_info" />
+		</receiver>
+
 		<service android:name=".service.BootService" />
 	</application>
+
 </manifest>

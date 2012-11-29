@@ -21,6 +21,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -31,70 +32,77 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.aokp.performance.R;
+import com.aokp.performance.activities.PCSettings;
 import com.aokp.performance.util.Constants;
 
 public class CPUInfo extends Fragment implements Constants {
 
-    private TextView mKernelInfo;
-    private TextView mCPUInfo;
-    private TextView mMemInfo;
+	private TextView mKernelInfo;
+	private TextView mCPUInfo;
+	private TextView mMemInfo;
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup root,
-        Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.cpu_info, root, false);
-        mKernelInfo = (TextView)view.findViewById(R.id.kernel_info);
-        mCPUInfo = (TextView)view.findViewById(R.id.cpu_info);
-        mMemInfo = (TextView)view.findViewById(R.id.mem_info);
-        updateData();
-        
-        setHasOptionsMenu(true);
-        
-        return view;
-    }
-    
-    public void updateData() {
-        String newInfo = "";
-        mKernelInfo.setText(newInfo);
-        mCPUInfo.setText(newInfo);
-        mMemInfo.setText(newInfo);
-        readFile(mKernelInfo, KERNEL_INFO_PATH);
-        readFile(mCPUInfo, CPU_INFO_PATH);
-        readFile(mMemInfo, MEM_INFO_PATH);
-    }
-    
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        inflater.inflate(R.menu.cpu_info_menu, menu);
-    }
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setHasOptionsMenu(true);
+	}
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-    	if (item.getItemId() == R.id.refresh){ 
-    		updateData();
-    	}
-        return true;
-    }
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup root,
+			Bundle savedInstanceState) {
+		View view = inflater.inflate(R.layout.cpu_info, root, false);
+		mKernelInfo = (TextView) view.findViewById(R.id.kernel_info);
+		mCPUInfo = (TextView) view.findViewById(R.id.cpu_info);
+		mMemInfo = (TextView) view.findViewById(R.id.mem_info);
+		updateData();
+		return view;
+	}
 
-    public void readFile(TextView tView, String fName) {
-        FileReader fr = null;
-        try {
-            fr = new FileReader(fName);
-            BufferedReader br = new BufferedReader(fr);
-            String line = br.readLine();
-            while (null != line) {
-                tView.append(line);
-                tView.append("\n");
-                line = br.readLine();
-            }
-        } catch (IOException ex) {
-            } finally {
-                if (null != fr) {
-                try {
-                    fr.close();
-                } catch (IOException e) {
-                }
-            }
-        }
-    }
+	public void updateData() {
+		String newInfo = "";
+		mKernelInfo.setText(newInfo);
+		mCPUInfo.setText(newInfo);
+		mMemInfo.setText(newInfo);
+		readFile(mKernelInfo, KERNEL_INFO_PATH);
+		readFile(mCPUInfo, CPU_INFO_PATH);
+		readFile(mMemInfo, MEM_INFO_PATH);
+	}
+
+	@Override
+	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+		inflater.inflate(R.menu.cpu_info_menu, menu);
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		if (item.getItemId() == R.id.refresh) {
+			updateData();
+		} else if (item.getItemId() == R.id.app_settings) {
+			Intent intent = new Intent(getActivity(), PCSettings.class);
+			startActivity(intent);
+		}
+		return true;
+	}
+
+	public void readFile(TextView tView, String fName) {
+		FileReader fr = null;
+		try {
+			fr = new FileReader(fName);
+			BufferedReader br = new BufferedReader(fr);
+			String line = br.readLine();
+			while (null != line) {
+				tView.append(line);
+				tView.append("\n");
+				line = br.readLine();
+			}
+		} catch (IOException ex) {
+		} finally {
+			if (null != fr) {
+				try {
+					fr.close();
+				} catch (IOException e) {
+				}
+			}
+		}
+	}
 }

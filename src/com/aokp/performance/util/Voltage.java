@@ -18,31 +18,31 @@ Copyright (C) 2012 James Roberts
 package com.aokp.performance.util;
 
 public class Voltage {
-    private String mFreq;
-    private String mCurrentMv;
-    private String mSavedMv;
+	private String mFreq;
+	private String mCurrentMv;
+	private String mSavedMv;
 
-    public void setFreq(final String freq) {
-        this.mFreq = freq;
-    }
+	public void setFreq(final String freq) {
+		this.mFreq = freq;
+	}
 
-    public String getFreq() {
-        return mFreq;
-    }
+	public String getFreq() {
+		return mFreq;
+	}
 
-    public void setCurrentMV(final String currentMv) {
-        this.mCurrentMv = currentMv;
-    }
+	public void setCurrentMV(final String currentMv) {
+		this.mCurrentMv = currentMv;
+	}
 
-    public String getCurrentMv() {
-        return mCurrentMv;
-    }
+	public String getCurrentMv() {
+		return mCurrentMv;
+	}
 
-    public void setSavedMV(final String savedMv) {
-        this.mSavedMv = savedMv;
-    }
+	public void setSavedMV(final String savedMv) {
+		this.mSavedMv = savedMv;
+	}
 
-    public String getSavedMV() {
-        return mSavedMv;
-    }
+	public String getSavedMV() {
+		return mSavedMv;
+	}
 }

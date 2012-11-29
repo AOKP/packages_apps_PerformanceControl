@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
 	<string-array name="minfree" translatable="false">
 		<item>@string/size_25_mb</item>
 		<item>@string/size_50_mb</item>
@@ -30,4 +31,5 @@
 		<item>2048</item>
 		<item>4096</item>
 	</string-array>
+
 </resources>

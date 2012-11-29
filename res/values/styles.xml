@@ -1,9 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
-	<style name="Theme.Dark" parent="android:Theme.Holo">
+
+	<style name="Theme_Dark" parent="android:Theme.Holo">
 		<item name="android:listSeparatorTextViewStyle">@style/pc_pref_cat</item>
-		<item name="android:windowBackground">@color/pc_black</item>
 		<item name="android:actionBarStyle">@style/action_bar_style</item>
 	</style>
+
 	<style name="pc_pref_cat">
 		<item name="android:background">@color/pc_cat_gray</item>
 		<item name="android:layout_width">match_parent</item>
@@ -13,8 +15,10 @@
 		<item name="android:gravity">center_vertical</item>
 		<item name="android:paddingLeft">6dip</item>
 	</style>
+
 	<style name="action_bar_style" parent="@android:style/Widget.Holo.ActionBar">
 		<item name="android:icon">@drawable/titleimage</item>
 		<item name="android:displayOptions">showHome</item>
 	</style>
+
 </resources>

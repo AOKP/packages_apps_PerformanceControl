@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Performance Control - An Android CPU Control application
+<!--
+Performance Control - An Android CPU Control application
 Copyright (C) 2012 Jared Rummler
 Copyright (C) 2012  James Roberts
 
@@ -14,55 +15,60 @@ Copyright (C) 2012  James Roberts
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>. -->
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-	android:id="@+id/layout_root"
-	android:layout_width="match_parent"
-	android:layout_height="match_parent" >
-	<LinearLayout
-		xmlns:android="http://schemas.android.com/apk/res/android"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:orientation="vertical"
-		android:padding="10.0dip" >
-		<RelativeLayout
-			xmlns:android="http://schemas.android.com/apk/res/android"
-			android:id="@+id/voltageDialogLayout"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:layout_below="@+id/conditionText"
-			android:paddingTop="10.0dip" >
-			<EditText
-				android:id="@+id/voltageEdit"
-				android:layout_width="60.0dip"
-				android:layout_height="wrap_content"
-				android:layout_toRightOf="@+id/negativeText"
-				android:inputType="number"
-				android:maxLength="4"
-				android:paddingRight="5.0dip"
-				android:paddingTop="10.0dip" />
-			<SeekBar
-				android:id="@+id/voltageSeek"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_toRightOf="@+id/voltageEdit"
-				android:max="100"
-				android:paddingLeft="10.0dip"
-				android:paddingTop="12.0dip"
-				android:progress="50" />
-			<TextView
-				android:id="@+id/voltageMeter"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_alignLeft="@+id/voltageSeek"
-				android:paddingLeft="14.0dip"
-				android:paddingTop="40.0dip"
-				android:shadowColor="#ffffffff"
-				android:shadowRadius="3.0"
-				android:textColor="#ffffffff"
-				android:textSize="18.0dip"
-				android:typeface="monospace" />
-		</RelativeLayout>
-	</LinearLayout>
+    android:id="@+id/layout_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10.0dip" >
+
+        <RelativeLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/voltageDialogLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10.0dip" >
+
+            <EditText
+                android:id="@+id/voltageEdit"
+                android:layout_width="60.0dip"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:maxLength="4"
+                android:paddingRight="5.0dip"
+                android:paddingTop="10.0dip" />
+
+            <SeekBar
+                android:id="@+id/voltageSeek"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/voltageEdit"
+                android:max="100"
+                android:paddingLeft="10.0dip"
+                android:paddingTop="12.0dip"
+                android:progress="50" />
+
+            <TextView
+                android:id="@+id/voltageMeter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/voltageSeek"
+                android:paddingLeft="14.0dip"
+                android:paddingTop="40.0dip"
+                android:shadowColor="#ffffffff"
+                android:shadowRadius="3.0"
+                android:textColor="#ffffffff"
+                android:textSize="18.0dip"
+                android:typeface="monospace" />
+        </RelativeLayout>
+    </LinearLayout>
+
 </ScrollView>

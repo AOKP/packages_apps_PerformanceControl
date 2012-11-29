@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Performance Control - An Android CPU Control application
+<!--
+Performance Control - An Android CPU Control application
 Copyright (C) 2012  James Roberts
 
     This program is free software: you can redistribute it and/or modify
@@ -13,85 +14,104 @@ Copyright (C) 2012  James Roberts
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>. -->
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-	android:layout_width="match_parent"
-	android:layout_height="wrap_content" >
-	<PreferenceCategory
-		android:key="performance"
-		android:title="@string/prefcat_free_memory" >
-		<ListPreference
-			android:dialogTitle="@string/dt_free_memory"
-			android:entries="@array/minfree"
-			android:entryValues="@array/minfree_values"
-			android:key="pref_minfree"
-			android:persistent="true"
-			android:summary="@string/ps_free_memory"
-			android:title="@string/pt_free_memory" />
-		<CheckBoxPreference
-			android:defaultValue="false"
-			android:key="pref_minfree_boot"
-			android:summary="@string/ps_free_memory_boot"
-			android:title="@string/sob" />
-	</PreferenceCategory>
-	<PreferenceCategory
-		android:key="category_read_ahead"
-		android:title="@string/prefcat_read_ahead" >
-		<ListPreference
-			android:dialogTitle="@string/dt_read_ahead"
-			android:entries="@array/read_ahead"
-			android:entryValues="@array/read_ahead_values"
-			android:key="pref_read_ahead"
-			android:persistent="true"
-			android:title="@string/pt_read_ahead" />
-		<CheckBoxPreference
-			android:defaultValue="false"
-			android:key="pref_read_ahead_boot"
-			android:summary="@string/ps_read_ahead_boot"
-			android:title="@string/sob" />
-	</PreferenceCategory>
-	<PreferenceCategory
-		android:key="kernel"
-		android:title="@string/prefcat_tweaks" >
-		<CheckBoxPreference
-			android:defaultValue="false"
-			android:key="pref_fast_charge"
-			android:summary="@string/ps_fast_charge_boot"
-			android:title="@string/pt_fast_charge_boot" />
-	</PreferenceCategory>
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
 
-	<PreferenceCategory
-		android:key="vm_settings"
-		android:title="@string/prefcat_vm_settings" >
-		<Preference
-			android:key="pref_dirty_ratio"
-			android:title="@string/dirty_ratio_title" />
-		<Preference
-			android:key="pref_dirty_background"
-			android:title="@string/dirty_background_title" />
-		<Preference
-			android:key="pref_dirty_expire"
-			android:title="@string/dirty_expire_title" />
-		<Preference
-			android:key="pref_dirty_writeback"
-			android:title="@string/dirty_writeback_title" />
-		<Preference
-			android:key="pref_min_free_kb"
-			android:title="@string/min_free_title" />
-		<Preference
-			android:key="pref_overcommit"
-			android:title="@string/overcommit_title" />
-		<Preference
-			android:key="pref_swappiness"
-			android:title="@string/swappiness_title" />
-		<Preference
-			android:key="pref_vfs"
-			android:title="@string/vfs_title" />
-		<CheckBoxPreference
-			android:defaultValue="false"
-			android:key="vm_sob"
-			android:summary="@string/ps_vm_set_on_boot"
-			android:title="@string/sob" />
-	</PreferenceCategory>
+    <PreferenceCategory
+        android:key="performance"
+        android:title="@string/prefcat_free_memory" >
+
+        <ListPreference
+            android:dialogTitle="@string/dt_free_memory"
+            android:entries="@array/minfree"
+            android:entryValues="@array/minfree_values"
+            android:key="pref_minfree"
+            android:persistent="true"
+            android:summary="@string/ps_free_memory"
+            android:title="@string/pt_free_memory" />
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="pref_minfree_boot"
+            android:summary="@string/ps_free_memory_boot"
+            android:title="@string/sob" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="category_read_ahead"
+        android:title="@string/prefcat_read_ahead" >
+
+        <ListPreference
+            android:dialogTitle="@string/dt_read_ahead"
+            android:entries="@array/read_ahead"
+            android:entryValues="@array/read_ahead_values"
+            android:key="pref_read_ahead"
+            android:persistent="true"
+            android:title="@string/pt_read_ahead" />
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="pref_read_ahead_boot"
+            android:summary="@string/ps_read_ahead_boot"
+            android:title="@string/sob" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="kernel"
+        android:title="@string/prefcat_tweaks" >
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="pref_fast_charge"
+            android:summary="@string/ps_fast_charge_boot"
+            android:title="@string/pt_fast_charge_boot" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="vm_settings"
+        android:title="@string/prefcat_vm_settings" >
+
+        <Preference
+            android:key="pref_dirty_ratio"
+            android:title="@string/dirty_ratio_title" />
+
+        <Preference
+            android:key="pref_dirty_background"
+            android:title="@string/dirty_background_title" />
+
+        <Preference
+            android:key="pref_dirty_expire"
+            android:title="@string/dirty_expire_title" />
+
+        <Preference
+            android:key="pref_dirty_writeback"
+            android:title="@string/dirty_writeback_title" />
+
+        <Preference
+            android:key="pref_min_free_kb"
+            android:title="@string/min_free_title" />
+
+        <Preference
+            android:key="pref_overcommit"
+            android:title="@string/overcommit_title" />
+
+        <Preference
+            android:key="pref_swappiness"
+            android:title="@string/swappiness_title" />
+
+        <Preference
+            android:key="pref_vfs"
+            android:title="@string/vfs_title" />
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="vm_sob"
+            android:summary="@string/ps_vm_set_on_boot"
+            android:title="@string/sob" />
+    </PreferenceCategory>
+
 </PreferenceScreen>

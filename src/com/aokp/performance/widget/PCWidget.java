@@ -31,50 +31,51 @@ import com.aokp.performance.util.Constants;
 import com.aokp.performance.util.Helpers;
 
 public class PCWidget extends AppWidgetProvider implements Constants {
-    
-    @Override
-    public void onReceive(Context context, Intent intent) {
-        super.onReceive(context, intent);
-        Bundle extras = intent.getExtras();
-        if (extras == null)
-            return;
-        final AppWidgetManager awm = AppWidgetManager.getInstance(context);
-        final ComponentName nm = new ComponentName(context, PCWidget.class);
-        final String action = intent.getAction();
-        if (action.equals("com.aokp.performance.ACTION_FREQS_CHANGED")) {
-            onUpdate(context, awm, awm.getAppWidgetIds(nm));
-        }
-    }
-    
-    @Override
-    public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
-        for(int awi : appWidgetIds) {
-            String max = Helpers.readOneLine(MAX_FREQ_PATH);
-            String min = Helpers.readOneLine(MIN_FREQ_PATH);
-            String gov = Helpers.readOneLine(GOVERNOR_PATH);
-            String io = Helpers.getIOScheduler();
-            onUpdateWidget(context, appWidgetManager, awi, max, min, gov, io);
-        }
-    }
-    
-    public void onUpdateWidget(Context context, AppWidgetManager appWidgetManager, int appWidgetId,
-            String max, String min, String gov, String io) {
 
-        RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget);
-        views.setTextViewText(R.id.max, toMHz(max));
-        views.setTextViewText(R.id.min, toMHz(min));
-        views.setTextViewText(R.id.gov, gov);
-        views.setTextViewText(R.id.io, io);
-        Intent intent = new Intent(context, MainActivity.class);
-        intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-        PendingIntent pendingIntent = PendingIntent.getActivity(context, appWidgetId, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-        views.setOnClickPendingIntent(R.id.widget_bg, pendingIntent);
+	@Override
+	public void onReceive(Context context, Intent intent) {
+		super.onReceive(context, intent);
+		Bundle extras = intent.getExtras();
+		if (extras == null)
+			return;
+		final AppWidgetManager awm = AppWidgetManager.getInstance(context);
+		final ComponentName nm = new ComponentName(context, PCWidget.class);
+		final String action = intent.getAction();
+		if (action.equals("com.aokp.performance.ACTION_FREQS_CHANGED")) {
+			onUpdate(context, awm, awm.getAppWidgetIds(nm));
+		}
+	}
 
-        appWidgetManager.updateAppWidget(appWidgetId, views);
-    }
-    
-    private String toMHz(String mhzString) {
-        return new StringBuilder().append(Integer.valueOf(mhzString) / 1000).append(" MHz").toString();
-    }
+	@Override
+	public void onUpdate(Context context, AppWidgetManager appWidgetManager,
+			int[] appWidgetIds) {
+		for (int awi : appWidgetIds) {
+			String max = Helpers.readOneLine(MAX_FREQ_PATH);
+			String min = Helpers.readOneLine(MIN_FREQ_PATH);
+			String gov = Helpers.readOneLine(GOVERNOR_PATH);
+			String io = Helpers.getIOScheduler();
+			onUpdateWidget(context, appWidgetManager, awi, max, min, gov, io);
+		}
+	}
+
+	public void onUpdateWidget(Context context,
+			AppWidgetManager appWidgetManager, int appWidgetId, String max,
+			String min, String gov, String io) {
+
+		RemoteViews views = new RemoteViews(context.getPackageName(),
+				R.layout.widget);
+		views.setTextViewText(R.id.max, Helpers.toMHz(max));
+		views.setTextViewText(R.id.min, Helpers.toMHz(min));
+		views.setTextViewText(R.id.gov, gov);
+		views.setTextViewText(R.id.io, io);
+		Intent intent = new Intent(context, MainActivity.class);
+		intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId);
+		intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK
+				| Intent.FLAG_ACTIVITY_NEW_TASK);
+		PendingIntent pendingIntent = PendingIntent.getActivity(context,
+				appWidgetId, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+		views.setOnClickPendingIntent(R.id.widget_bg, pendingIntent);
+
+		appWidgetManager.updateAppWidget(appWidgetId, views);
+	}
 }
