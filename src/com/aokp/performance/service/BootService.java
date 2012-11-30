@@ -132,7 +132,7 @@ public class BootService extends Service implements Constants {
             }
             boolean FChargeOn = preferences.getBoolean(PREF_FASTCHARGE, false);
             try {
-                File fastcharge = new File(FASTCHARGE_PATH, FASTCHARGE_FILE);
+                File fastcharge = new File(FASTCHARGE_PATH);
                 FileWriter fwriter = new FileWriter(fastcharge);
                 BufferedWriter bwriter = new BufferedWriter(fwriter);
                 bwriter.write(FChargeOn ? "1" : "0");

@@ -36,6 +36,7 @@ public class PCSettings extends PreferenceActivity implements Constants,
 
     SharedPreferences          mPreferences;
     private CheckBoxPreference mLightThemePref;
+    private Preference mVersion;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -43,6 +44,8 @@ public class PCSettings extends PreferenceActivity implements Constants,
         mPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         addPreferencesFromResource(R.xml.pc_settings);
         mLightThemePref = (CheckBoxPreference) findPreference("use_light_theme");
+        mVersion = (Preference) findPreference("version_info");
+        mVersion.setTitle("Version - " + VERSION_NUM);
         setTheme();
     }
 

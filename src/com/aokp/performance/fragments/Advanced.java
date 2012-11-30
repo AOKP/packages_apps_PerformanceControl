@@ -18,7 +18,9 @@
 
 package com.aokp.performance.fragments;
 
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -133,7 +135,7 @@ public class Advanced extends PreferenceFragment implements
         mSwappiness.setSummary(Helpers.readOneLine(SWAPPINESS_PATH));
         mVfs.setSummary(Helpers.readOneLine(VFS_CACHE_PRESSURE_PATH));
 
-        boolean fChargeExists = new File(FASTCHARGE_PATH + FASTCHARGE_FILE)
+        boolean fChargeExists = new File(FASTCHARGE_PATH)
                 .exists();
         if (!fChargeExists) {
             PreferenceCategory kernelCat = (PreferenceCategory) findPreference("kernel");

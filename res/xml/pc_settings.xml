@@ -26,4 +26,6 @@ Copyright (C) 2012  James Roberts
         android:summary="@string/ps_use_light_theme"
         android:title="@string/pt_use_light_theme" />
 
+    <Preference android:key="version_info" />
+
 </PreferenceScreen>

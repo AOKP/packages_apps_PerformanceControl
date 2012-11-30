@@ -51,8 +51,7 @@ public interface Constants {
     // Other settings
     public static final String MINFREE_PATH             = "/sys/module/lowmemorykiller/parameters/minfree";
     public static final String READ_AHEAD_PATH          = "/sys/devices/virtual/bdi/179:0/read_ahead_kb";
-    public static final String FASTCHARGE_PATH          = "/sys/kernel/fast_charge";
-    public static final String FASTCHARGE_FILE          = "force_fast_charge";
+    public static final String FASTCHARGE_PATH          = "/sys/kernel/fast_charge/force_fast_charge";
     public static final String INTENT_ACTION_FASTCHARGE = "com.aokp.romcontrol.FCHARGE_CHANGED";
     public static final String PREF_MINFREE             = "pref_minfree";
     public static final String PREF_MINFREE_BOOT        = "pref_minfree_boot";
@@ -87,4 +86,5 @@ public interface Constants {
 
     // PC Settings
     public static final String PREF_USE_LIGHT_THEME     = "use_light_theme";
+    public static final String VERSION_NUM              = "1.0.2";
 }
