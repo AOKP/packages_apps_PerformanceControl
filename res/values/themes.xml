@@ -17,25 +17,18 @@ Copyright (C) 2012  James Roberts
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/viewpager"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" >
+    <style name="Theme_Dark" parent="android:Theme.Holo">
+        <item name="android:listSeparatorTextViewStyle">@style/pc_pref_cat</item>
+        <item name="android:actionBarStyle">@style/action_bar_style</item>
+        <item name="android:windowBackground">@drawable/background_holo_dark</item>
+    </style>
 
-        <android.support.v4.view.PagerTabStrip
-            android:id="@+id/pagerTabStrip"
-            android:layout_width="wrap_content"
-            android:layout_height="25dp"
-            android:layout_gravity="top"
-            android:textSize="12sp"
-            android:textStyle="bold" />
-    </android.support.v4.view.ViewPager>
+    <style name="Theme_Light" parent="android:Theme.Holo.Light.DarkActionBar">
+        <item name="android:listSeparatorTextViewStyle">@style/pc_pref_cat</item>
+        <item name="android:actionBarStyle">@style/action_bar_style</item>
+        <item name="android:windowBackground">@drawable/background_holo_light</item>
+    </style>
 
-</LinearLayout>
+</resources>

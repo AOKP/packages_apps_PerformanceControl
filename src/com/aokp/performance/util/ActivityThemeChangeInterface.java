@@ -1,6 +1,5 @@
 /*
- * Performance Control - An Android CPU Control application Copyright (C) 2012
- * Jared Rummler Copyright (C) 2012 James Roberts
+ * Copyright (C) 2012 Mariotaku Lee <mariotaku.lee@gmail.com>
  * 
  * This program is free software: you can redistribute it and/or modify it under
  * the terms of the GNU General Public License as published by the Free Software
@@ -18,32 +17,15 @@
 
 package com.aokp.performance.util;
 
-public class Voltage {
-    private String mFreq;
-    private String mCurrentMv;
-    private String mSavedMv;
+import android.os.Bundle;
 
-    public void setFreq(final String freq) {
-        this.mFreq = freq;
-    }
+public interface ActivityThemeChangeInterface {
 
-    public String getFreq() {
-        return mFreq;
-    }
+    public boolean isThemeChanged();
 
-    public void setCurrentMV(final String currentMv) {
-        this.mCurrentMv = currentMv;
-    }
+    public void onCreate(Bundle savedInstanceState);
 
-    public String getCurrentMv() {
-        return mCurrentMv;
-    }
+    public void onResume();
 
-    public void setSavedMV(final String savedMv) {
-        this.mSavedMv = savedMv;
-    }
-
-    public String getSavedMV() {
-        return mSavedMv;
-    }
+    public void setTheme();
 }

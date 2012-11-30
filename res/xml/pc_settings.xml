@@ -21,4 +21,9 @@ Copyright (C) 2012  James Roberts
     android:layout_width="match_parent"
     android:layout_height="wrap_content" >
 
+    <CheckBoxPreference
+        android:key="use_light_theme"
+        android:summary="@string/ps_use_light_theme"
+        android:title="@string/pt_use_light_theme" />
+
 </PreferenceScreen>

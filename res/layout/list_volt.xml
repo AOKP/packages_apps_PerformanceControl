@@ -33,8 +33,7 @@ Copyright (C) 2012  James Roberts
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="3dip"
-        android:text="@string/current"
-        android:textColor="@color/pc_white" />
+        android:text="@string/current" />
 
     <TextView
         android:id="@+id/mVSaved"
