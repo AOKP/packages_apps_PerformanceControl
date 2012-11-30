@@ -289,6 +289,12 @@ public class CPUSettings extends Fragment implements
 			mCurCPUThread.start();
 		}
 	}
+	
+	@Override
+	public void onPause() {
+	    super.onPause();
+	    updateAppWidget();
+	}
 
 	@Override
 	public void onDestroy() {
@@ -364,7 +370,6 @@ public class CPUSettings extends Fragment implements
 		final SharedPreferences.Editor editor = mPreferences.edit();
 		editor.putString(var, value);
 		editor.commit();
-		updateAppWidget();
 	}
 
 	private void updateAppWidget() {
