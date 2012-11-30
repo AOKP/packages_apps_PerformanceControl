@@ -1,20 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-Performance Control - An Android CPU Control application
-Copyright (C) 2012  James Roberts
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+     Performance Control - An Android CPU Control application Copyright (C) 
+	2012 James Roberts This program is free software: you can redistribute it 
+	and/or modify it under the terms of the GNU General Public License as published 
+	by the Free Software Foundation, either version 3 of the License, or (at 
+	your option) any later version. This program is distributed in the hope that 
+	it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty 
+	of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General 
+	Public License for more details. You should have received a copy of the GNU 
+	General Public License along with this program. If not, see <http://www.gnu.org/licenses/>.
 -->
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
@@ -22,13 +16,13 @@ Copyright (C) 2012  James Roberts
     <style name="Theme_Dark" parent="android:Theme.Holo">
         <item name="android:listSeparatorTextViewStyle">@style/pc_pref_cat</item>
         <item name="android:actionBarStyle">@style/action_bar_style</item>
-        <item name="android:windowBackground">@drawable/background_holo_dark</item>
+        <item name="android:actionOverflowButtonStyle">@style/menu_overflow</item>
     </style>
 
-    <style name="Theme_Light" parent="android:Theme.Holo.Light.DarkActionBar">
+    <style name="Theme_Light" parent="android:Theme.Holo.Light">
         <item name="android:listSeparatorTextViewStyle">@style/pc_pref_cat</item>
         <item name="android:actionBarStyle">@style/action_bar_style</item>
-        <item name="android:windowBackground">@drawable/background_holo_light</item>
+        <item name="android:actionOverflowButtonStyle">@style/menu_overflow</item>
     </style>
 
 </resources>
