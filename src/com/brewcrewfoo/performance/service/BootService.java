@@ -16,7 +16,7 @@
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.aokp.performance.service;
+package com.brewcrewfoo.performance.service;
 
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -34,13 +34,13 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
 
-import com.aokp.performance.R;
+import com.brewcrewfoo.performance.R;
 
-import com.aokp.performance.fragments.VoltageControlSettings;
-import com.aokp.performance.util.CMDProcessor;
-import com.aokp.performance.util.Constants;
-import com.aokp.performance.util.Helpers;
-import com.aokp.performance.util.Voltage;
+import com.brewcrewfoo.performance.fragments.VoltageControlSettings;
+import com.brewcrewfoo.performance.util.CMDProcessor;
+import com.brewcrewfoo.performance.util.Constants;
+import com.brewcrewfoo.performance.util.Helpers;
+import com.brewcrewfoo.performance.util.Voltage;
 
 public class BootService extends Service implements Constants {
 

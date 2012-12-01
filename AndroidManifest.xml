@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.aokp.performance"
+    package="com.brewcrewfoo.performance"
     android:versionCode="2"
-    android:versionName="1.0.2" >
+    android:versionName="1.0.3" >
 
     <uses-sdk
         android:minSdkVersion="14"
@@ -23,7 +23,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.PCSettings" />
+        <activity android:name="com.brewcrewfoo.performance.activities.PCSettings" />
 
         <receiver android:name=".service.BootReceiver" >
             <intent-filter>
@@ -31,11 +31,11 @@
             </intent-filter>
         </receiver>
         <receiver
-            android:name=".widget.PCWidget"
+            android:name="com.brewcrewfoo.performance.widget.PCWidget"
             android:label="Performance Control" >
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-                <action android:name="com.aokp.performance.ACTION_FREQS_CHANGED" />
+                <action android:name="com.brewcrewfoo.performance.ACTION_FREQS_CHANGED" />
             </intent-filter>
 
             <meta-data
@@ -43,7 +43,7 @@
                 android:resource="@xml/widget_info" />
         </receiver>
 
-        <service android:name=".service.BootService" />
+        <service android:name="com.brewcrewfoo.performance.service.BootService" />
     </application>
 
 </manifest>

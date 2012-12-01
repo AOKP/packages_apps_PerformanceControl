@@ -16,11 +16,9 @@
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.aokp.performance.fragments;
+package com.brewcrewfoo.performance.fragments;
 
-import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileWriter;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -53,11 +51,11 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 
-import com.aokp.performance.R;
-import com.aokp.performance.activities.PCSettings;
-import com.aokp.performance.util.CMDProcessor;
-import com.aokp.performance.util.Constants;
-import com.aokp.performance.util.Helpers;
+import com.brewcrewfoo.performance.R;
+import com.brewcrewfoo.performance.activities.PCSettings;
+import com.brewcrewfoo.performance.util.CMDProcessor;
+import com.brewcrewfoo.performance.util.Constants;
+import com.brewcrewfoo.performance.util.Helpers;
 
 public class Advanced extends PreferenceFragment implements
         OnSharedPreferenceChangeListener, OnPreferenceChangeListener, Constants {

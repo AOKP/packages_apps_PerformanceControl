@@ -16,7 +16,7 @@
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.aokp.performance.widget;
+package com.brewcrewfoo.performance.widget;
 
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
@@ -24,16 +24,20 @@ import android.appwidget.AppWidgetProvider;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.widget.RemoteViews;
 
-import com.aokp.performance.R;
-import com.aokp.performance.activities.MainActivity;
-import com.aokp.performance.util.Constants;
-import com.aokp.performance.util.Helpers;
+import com.brewcrewfoo.performance.R;
+import com.brewcrewfoo.performance.activities.MainActivity;
+import com.brewcrewfoo.performance.util.Constants;
+import com.brewcrewfoo.performance.util.Helpers;
 
 public class PCWidget extends AppWidgetProvider implements Constants {
 
+    SharedPreferences mPreferences;
+    
     @Override
     public void onReceive(Context context, Intent intent) {
         super.onReceive(context, intent);
@@ -43,7 +47,7 @@ public class PCWidget extends AppWidgetProvider implements Constants {
         final AppWidgetManager awm = AppWidgetManager.getInstance(context);
         final ComponentName nm = new ComponentName(context, PCWidget.class);
         final String action = intent.getAction();
-        if (action.equals("com.aokp.performance.ACTION_FREQS_CHANGED")) {
+        if (action.equals("com.brewcrewfoo.performance.ACTION_FREQS_CHANGED")) {
             onUpdate(context, awm, awm.getAppWidgetIds(nm));
         }
     }
@@ -63,13 +67,22 @@ public class PCWidget extends AppWidgetProvider implements Constants {
     public void onUpdateWidget(Context context,
             AppWidgetManager appWidgetManager, int appWidgetId, String max,
             String min, String gov, String io) {
-
+        mPreferences = PreferenceManager
+                .getDefaultSharedPreferences(context);
         RemoteViews views = new RemoteViews(context.getPackageName(),
                 R.layout.widget);
+        boolean useLightBG = mPreferences.getBoolean(PREF_USE_LIGHT_WIDGET_BG, false);
+        int textColor = mPreferences.getInt(PREF_WIDGET_TEXT_COLOR, 0xff808080);
+        int bg = useLightBG ? R.drawable.background_holo_light : R.drawable.background_holo_dark;
+        views.setImageViewResource(R.id.widget_bg, bg);
         views.setTextViewText(R.id.max, Helpers.toMHz(max));
         views.setTextViewText(R.id.min, Helpers.toMHz(min));
         views.setTextViewText(R.id.gov, gov);
         views.setTextViewText(R.id.io, io);
+        views.setTextColor(R.id.max, textColor);
+        views.setTextColor(R.id.min, textColor);
+        views.setTextColor(R.id.gov, textColor);
+        views.setTextColor(R.id.io, textColor);
         Intent intent = new Intent(context, MainActivity.class);
         intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK

@@ -16,7 +16,7 @@
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.aokp.performance.fragments;
+package com.brewcrewfoo.performance.fragments;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -60,12 +60,12 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.aokp.performance.R;
-import com.aokp.performance.activities.PCSettings;
-import com.aokp.performance.util.CMDProcessor;
-import com.aokp.performance.util.Constants;
-import com.aokp.performance.util.Helpers;
-import com.aokp.performance.util.Voltage;
+import com.brewcrewfoo.performance.R;
+import com.brewcrewfoo.performance.activities.PCSettings;
+import com.brewcrewfoo.performance.util.CMDProcessor;
+import com.brewcrewfoo.performance.util.Constants;
+import com.brewcrewfoo.performance.util.Helpers;
+import com.brewcrewfoo.performance.util.Voltage;
 
 public class VoltageControlSettings extends Fragment implements Constants {
 

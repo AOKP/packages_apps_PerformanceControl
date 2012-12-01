@@ -17,7 +17,7 @@
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.aokp.performance.util;
+package com.brewcrewfoo.performance.util;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -30,7 +30,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.aokp.performance.util.Constants;
+import com.brewcrewfoo.performance.util.Constants;
 
 import android.annotation.SuppressLint;
 import android.os.SystemClock;

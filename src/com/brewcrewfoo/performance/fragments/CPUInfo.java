@@ -16,7 +16,7 @@
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.aokp.performance.fragments;
+package com.brewcrewfoo.performance.fragments;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -33,9 +33,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.aokp.performance.R;
-import com.aokp.performance.activities.PCSettings;
-import com.aokp.performance.util.Constants;
+import com.brewcrewfoo.performance.R;
+import com.brewcrewfoo.performance.activities.PCSettings;
+import com.brewcrewfoo.performance.util.Constants;
 
 public class CPUInfo extends Fragment implements Constants {
 

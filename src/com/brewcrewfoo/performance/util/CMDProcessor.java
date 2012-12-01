@@ -16,7 +16,7 @@
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.aokp.performance.util;
+package com.brewcrewfoo.performance.util;
 
 import android.util.Log;
 

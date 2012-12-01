@@ -16,7 +16,7 @@
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.aokp.performance.fragments;
+package com.brewcrewfoo.performance.fragments;
 
 import android.app.Fragment;
 import android.appwidget.AppWidgetManager;
@@ -46,12 +46,12 @@ import java.io.File;
 import java.util.Arrays;
 import java.util.Comparator;
 
-import com.aokp.performance.R;
-import com.aokp.performance.activities.PCSettings;
-import com.aokp.performance.util.Constants;
-import com.aokp.performance.util.CMDProcessor;
-import com.aokp.performance.util.Helpers;
-import com.aokp.performance.widget.PCWidget;
+import com.brewcrewfoo.performance.R;
+import com.brewcrewfoo.performance.activities.PCSettings;
+import com.brewcrewfoo.performance.util.CMDProcessor;
+import com.brewcrewfoo.performance.util.Constants;
+import com.brewcrewfoo.performance.util.Helpers;
+import com.brewcrewfoo.performance.widget.PCWidget;
 
 public class CPUSettings extends Fragment implements
         SeekBar.OnSeekBarChangeListener, Constants {
@@ -295,7 +295,7 @@ public class CPUSettings extends Fragment implements
     @Override
     public void onPause() {
         super.onPause();
-        updateAppWidget();
+        Helpers.updateAppWidget(getActivity());
     }
 
     @Override
@@ -373,17 +373,5 @@ public class CPUSettings extends Fragment implements
         final SharedPreferences.Editor editor = mPreferences.edit();
         editor.putString(var, value);
         editor.commit();
-    }
-
-    private void updateAppWidget() {
-        AppWidgetManager widgetManager = AppWidgetManager
-                .getInstance(getActivity());
-        ComponentName widgetComponent = new ComponentName(getActivity(),
-                PCWidget.class);
-        int[] widgetIds = widgetManager.getAppWidgetIds(widgetComponent);
-        Intent update = new Intent();
-        update.setAction("com.aokp.performance.ACTION_FREQS_CHANGED");
-        update.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, widgetIds);
-        getActivity().sendBroadcast(update);
     }
 }

@@ -17,7 +17,7 @@
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.aokp.performance.fragments;
+package com.brewcrewfoo.performance.fragments;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -42,12 +42,12 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.aokp.performance.activities.PCSettings;
-import com.aokp.performance.util.CPUStateMonitor;
-import com.aokp.performance.R;
-import com.aokp.performance.util.CPUStateMonitor.CPUStateMonitorException;
-import com.aokp.performance.util.CPUStateMonitor.CpuState;
-import com.aokp.performance.util.Constants;
+import com.brewcrewfoo.performance.R;
+import com.brewcrewfoo.performance.activities.PCSettings;
+import com.brewcrewfoo.performance.util.CPUStateMonitor;
+import com.brewcrewfoo.performance.util.Constants;
+import com.brewcrewfoo.performance.util.CPUStateMonitor.CPUStateMonitorException;
+import com.brewcrewfoo.performance.util.CPUStateMonitor.CpuState;
 
 public class TimeInState extends Fragment implements Constants {
 

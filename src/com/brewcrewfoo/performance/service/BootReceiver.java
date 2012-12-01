@@ -1,6 +1,6 @@
 /*
  * Performance Control - An Android CPU Control application Copyright (C) 2012
- * Jared Rummler Copyright (C) 2012 James Roberts
+ * James Roberts
  * 
  * This program is free software: you can redistribute it and/or modify it under
  * the terms of the GNU General Public License as published by the Free Software
@@ -16,34 +16,17 @@
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.aokp.performance.util;
+package com.brewcrewfoo.performance.service;
 
-public class Voltage {
-    private String mFreq;
-    private String mCurrentMv;
-    private String mSavedMv;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
 
-    public void setFreq(final String freq) {
-        this.mFreq = freq;
-    }
+public class BootReceiver extends BroadcastReceiver {
 
-    public String getFreq() {
-        return mFreq;
-    }
-
-    public void setCurrentMV(final String currentMv) {
-        this.mCurrentMv = currentMv;
-    }
-
-    public String getCurrentMv() {
-        return mCurrentMv;
-    }
-
-    public void setSavedMV(final String savedMv) {
-        this.mSavedMv = savedMv;
-    }
-
-    public String getSavedMV() {
-        return mSavedMv;
+    @Override
+    public void onReceive(Context context, Intent intent) {
+        Intent service = new Intent(context, BootService.class);
+        context.startService(service);
     }
 }

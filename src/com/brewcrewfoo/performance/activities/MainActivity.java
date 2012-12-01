@@ -16,7 +16,7 @@
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.aokp.performance.activities;
+package com.brewcrewfoo.performance.activities;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -34,15 +34,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
 
-import com.aokp.performance.R;
-import com.aokp.performance.fragments.CPUInfo;
-import com.aokp.performance.fragments.CPUSettings;
-import com.aokp.performance.fragments.Advanced;
-import com.aokp.performance.fragments.TimeInState;
-import com.aokp.performance.fragments.VoltageControlSettings;
-import com.aokp.performance.util.ActivityThemeChangeInterface;
-import com.aokp.performance.util.Constants;
-import com.aokp.performance.util.Helpers;
+import com.brewcrewfoo.performance.R;
+import com.brewcrewfoo.performance.fragments.Advanced;
+import com.brewcrewfoo.performance.fragments.CPUInfo;
+import com.brewcrewfoo.performance.fragments.CPUSettings;
+import com.brewcrewfoo.performance.fragments.TimeInState;
+import com.brewcrewfoo.performance.fragments.VoltageControlSettings;
+import com.brewcrewfoo.performance.util.ActivityThemeChangeInterface;
+import com.brewcrewfoo.performance.util.Constants;
+import com.brewcrewfoo.performance.util.Helpers;
 
 public class MainActivity extends Activity implements Constants,
         ActivityThemeChangeInterface {

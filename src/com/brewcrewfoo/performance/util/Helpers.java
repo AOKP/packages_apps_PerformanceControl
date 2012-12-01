@@ -16,7 +16,7 @@
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.aokp.performance.util;
+package com.brewcrewfoo.performance.util;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -25,7 +25,13 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import com.brewcrewfoo.performance.widget.PCWidget;
+
 import android.app.Activity;
+import android.appwidget.AppWidgetManager;
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 
 public class Helpers implements Constants {
@@ -342,5 +348,17 @@ public class Helpers implements Constants {
         activity.finish();
         activity.overridePendingTransition(enter_anim, exit_anim);
         activity.startActivity(activity.getIntent());
+    }
+    
+    public static void updateAppWidget(Context context) {
+        AppWidgetManager widgetManager = AppWidgetManager
+                .getInstance(context);
+        ComponentName widgetComponent = new ComponentName(context,
+                PCWidget.class);
+        int[] widgetIds = widgetManager.getAppWidgetIds(widgetComponent);
+        Intent update = new Intent();
+        update.setAction("com.brewcrewfoo.performance.ACTION_FREQS_CHANGED");
+        update.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, widgetIds);
+        context.sendBroadcast(update);
     }
 }

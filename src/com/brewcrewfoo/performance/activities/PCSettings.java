@@ -16,26 +16,29 @@
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.aokp.performance.activities;
+package com.brewcrewfoo.performance.activities;
 
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
 import android.preference.Preference;
+import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
 import android.preference.PreferenceScreen;
 
-import com.aokp.performance.R;
-import com.aokp.performance.util.ActivityThemeChangeInterface;
-import com.aokp.performance.util.Constants;
-import com.aokp.performance.util.Helpers;
+import com.brewcrewfoo.performance.R;
+import com.brewcrewfoo.performance.util.ActivityThemeChangeInterface;
+import com.brewcrewfoo.performance.util.Constants;
+import com.brewcrewfoo.performance.util.Helpers;
 
 public class PCSettings extends PreferenceActivity implements Constants,
-        ActivityThemeChangeInterface {
+        ActivityThemeChangeInterface, OnPreferenceChangeListener {
 
     SharedPreferences          mPreferences;
     private CheckBoxPreference mLightThemePref;
+    private ColorPickerPreference mWidgetTextColorPref;
     private Preference mVersion;
 
     @Override
@@ -44,6 +47,8 @@ public class PCSettings extends PreferenceActivity implements Constants,
         mPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         addPreferencesFromResource(R.xml.pc_settings);
         mLightThemePref = (CheckBoxPreference) findPreference("use_light_theme");
+        mWidgetTextColorPref = (ColorPickerPreference) findPreference("widget_text_color");
+        mWidgetTextColorPref.setOnPreferenceChangeListener(this);
         mVersion = (Preference) findPreference("version_info");
         mVersion.setTitle("Version - " + VERSION_NUM);
         setTheme();
@@ -55,6 +60,25 @@ public class PCSettings extends PreferenceActivity implements Constants,
         String key = preference.getKey();
         if ("use_light_theme".equals(key)) {
             Helpers.restartPC(this);
+            return true;
+        } else if ("use_light_widget_bg".equals(key)) {
+            Helpers.updateAppWidget(this);
+            return true;
+        }
+        return false;
+    }
+    
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        if (preference == mWidgetTextColorPref) {
+            String hex = ColorPickerPreference.convertToARGB(Integer.valueOf(String.valueOf(newValue)));
+            preference.setSummary(hex);
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            final SharedPreferences.Editor editor = mPreferences
+                    .edit();
+            editor.putInt(PREF_WIDGET_TEXT_COLOR, intHex);
+            editor.commit();
+            Helpers.updateAppWidget(this);
             return true;
         }
         return false;

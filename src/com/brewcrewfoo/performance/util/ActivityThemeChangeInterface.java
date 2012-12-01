@@ -1,6 +1,5 @@
 /*
- * Performance Control - An Android CPU Control application Copyright (C) 2012
- * James Roberts
+ * Copyright (C) 2012 Mariotaku Lee <mariotaku.lee@gmail.com>
  * 
  * This program is free software: you can redistribute it and/or modify it under
  * the terms of the GNU General Public License as published by the Free Software
@@ -16,17 +15,17 @@
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.aokp.performance.service;
+package com.brewcrewfoo.performance.util;
 
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
+import android.os.Bundle;
 
-public class BootReceiver extends BroadcastReceiver {
+public interface ActivityThemeChangeInterface {
 
-    @Override
-    public void onReceive(Context context, Intent intent) {
-        Intent service = new Intent(context, BootService.class);
-        context.startService(service);
-    }
+    public boolean isThemeChanged();
+
+    public void onCreate(Bundle savedInstanceState);
+
+    public void onResume();
+
+    public void setTheme();
 }

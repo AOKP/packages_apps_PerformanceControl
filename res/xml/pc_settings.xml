@@ -26,6 +26,16 @@ Copyright (C) 2012  James Roberts
         android:summary="@string/ps_use_light_theme"
         android:title="@string/pt_use_light_theme" />
 
+    <CheckBoxPreference
+        android:key="use_light_widget_bg"
+        android:summary="@string/ps_use_light_widget_bg"
+        android:title="@string/pt_use_light_widget_bg" />
+
+    <net.margaritov.preference.colorpicker.ColorPickerPreference
+    	android:key="widget_text_color"
+        android:title="@string/pt_widget_text_color"
+        android:defaultValue="#ff808080" />
+
     <Preference android:key="version_info" />
 
 </PreferenceScreen>
