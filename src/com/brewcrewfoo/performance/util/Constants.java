@@ -86,7 +86,7 @@ public interface Constants {
 
     // PC Settings
     public static final String PREF_USE_LIGHT_THEME     = "use_light_theme";
-    public static final String PREF_USE_LIGHT_WIDGET_BG = "use_light_widget_bg";
+    public static final String PREF_WIDGET_BG_COLOR     = "widget_bg_color";
     public static final String PREF_WIDGET_TEXT_COLOR   = "widget_text_color";
     public static final String VERSION_NUM              = "1.0.2";
 }

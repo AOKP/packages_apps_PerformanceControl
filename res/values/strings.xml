@@ -118,8 +118,7 @@ Copyright (C) 2012  James Roberts
     <!-- PC Settings -->
     <string name="pt_use_light_theme">Use light theme</string>
     <string name="ps_use_light_theme">If checked, Performance Control will use a Holo light theme</string>
-    <string name="pt_use_light_widget_bg">Use light widget BG</string>
-    <string name="ps_use_light_widget_bg">If checked, the widget will use a light background with dark text</string>
+    <string name="pt_widget_bg_color">Widget bg color</string>
     <string name="pt_widget_text_color">Widget text color</string>
     <!-- Color picker -->
     <string name="dialog_color_picker">Color Picker</string>

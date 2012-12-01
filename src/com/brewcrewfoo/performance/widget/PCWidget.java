@@ -37,7 +37,7 @@ import com.brewcrewfoo.performance.util.Helpers;
 public class PCWidget extends AppWidgetProvider implements Constants {
 
     SharedPreferences mPreferences;
-    
+
     @Override
     public void onReceive(Context context, Intent intent) {
         super.onReceive(context, intent);
@@ -67,22 +67,20 @@ public class PCWidget extends AppWidgetProvider implements Constants {
     public void onUpdateWidget(Context context,
             AppWidgetManager appWidgetManager, int appWidgetId, String max,
             String min, String gov, String io) {
-        mPreferences = PreferenceManager
-                .getDefaultSharedPreferences(context);
+        mPreferences = PreferenceManager.getDefaultSharedPreferences(context);
         RemoteViews views = new RemoteViews(context.getPackageName(),
                 R.layout.widget);
-        boolean useLightBG = mPreferences.getBoolean(PREF_USE_LIGHT_WIDGET_BG, false);
+        int bgColor = mPreferences.getInt(PREF_WIDGET_BG_COLOR, 0xff000000);
         int textColor = mPreferences.getInt(PREF_WIDGET_TEXT_COLOR, 0xff808080);
-        int bg = useLightBG ? R.drawable.background_holo_light : R.drawable.background_holo_dark;
-        views.setImageViewResource(R.id.widget_bg, bg);
+        views.setImageViewBitmap(R.id.widget_bg, Helpers.getBackground(bgColor));
         views.setTextViewText(R.id.max, Helpers.toMHz(max));
         views.setTextViewText(R.id.min, Helpers.toMHz(min));
         views.setTextViewText(R.id.gov, gov);
         views.setTextViewText(R.id.io, io);
         views.setTextColor(R.id.max, textColor);
         views.setTextColor(R.id.min, textColor);
-        views.setTextColor(R.id.gov, textColor);
         views.setTextColor(R.id.io, textColor);
+        views.setTextColor(R.id.gov, textColor);
         Intent intent = new Intent(context, MainActivity.class);
         intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK

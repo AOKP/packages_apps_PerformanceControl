@@ -32,6 +32,8 @@ import android.appwidget.AppWidgetManager;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
 import android.util.Log;
 
 public class Helpers implements Constants {
@@ -349,10 +351,14 @@ public class Helpers implements Constants {
         activity.overridePendingTransition(enter_anim, exit_anim);
         activity.startActivity(activity.getIntent());
     }
-    
+
+    /**
+     * Helper to update the app widget
+     * 
+     * @param context
+     */
     public static void updateAppWidget(Context context) {
-        AppWidgetManager widgetManager = AppWidgetManager
-                .getInstance(context);
+        AppWidgetManager widgetManager = AppWidgetManager.getInstance(context);
         ComponentName widgetComponent = new ComponentName(context,
                 PCWidget.class);
         int[] widgetIds = widgetManager.getAppWidgetIds(widgetComponent);
@@ -360,5 +366,25 @@ public class Helpers implements Constants {
         update.setAction("com.brewcrewfoo.performance.ACTION_FREQS_CHANGED");
         update.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, widgetIds);
         context.sendBroadcast(update);
+    }
+
+    /**
+     * Helper to create a bitmap to set as imageview or bg
+     * 
+     * @param bgcolor
+     * @return bitmap
+     */
+    public static Bitmap getBackground(int bgcolor) {
+        try {
+            Bitmap.Config config = Bitmap.Config.ARGB_8888;
+            Bitmap bitmap = Bitmap.createBitmap(2, 2, config);
+
+            Canvas canvas = new Canvas(bitmap);
+            canvas.drawColor(bgcolor);
+
+            return bitmap;
+        } catch (Exception e) {
+            return null;
+        }
     }
 }

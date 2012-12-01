@@ -36,21 +36,29 @@ import com.brewcrewfoo.performance.util.Helpers;
 public class PCSettings extends PreferenceActivity implements Constants,
         ActivityThemeChangeInterface, OnPreferenceChangeListener {
 
-    SharedPreferences          mPreferences;
-    private CheckBoxPreference mLightThemePref;
+    SharedPreferences             mPreferences;
+    private CheckBoxPreference    mLightThemePref;
+    private ColorPickerPreference mWidgetBgColorPref;
     private ColorPickerPreference mWidgetTextColorPref;
-    private Preference mVersion;
+    private Preference            mVersion;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         addPreferencesFromResource(R.xml.pc_settings);
+
         mLightThemePref = (CheckBoxPreference) findPreference("use_light_theme");
+
+        mWidgetBgColorPref = (ColorPickerPreference) findPreference("widget_bg_color");
+        mWidgetBgColorPref.setOnPreferenceChangeListener(this);
+
         mWidgetTextColorPref = (ColorPickerPreference) findPreference("widget_text_color");
         mWidgetTextColorPref.setOnPreferenceChangeListener(this);
+
         mVersion = (Preference) findPreference("version_info");
         mVersion.setTitle("Version - " + VERSION_NUM);
+
         setTheme();
     }
 
@@ -61,21 +69,28 @@ public class PCSettings extends PreferenceActivity implements Constants,
         if ("use_light_theme".equals(key)) {
             Helpers.restartPC(this);
             return true;
-        } else if ("use_light_widget_bg".equals(key)) {
-            Helpers.updateAppWidget(this);
-            return true;
         }
         return false;
     }
-    
+
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mWidgetTextColorPref) {
-            String hex = ColorPickerPreference.convertToARGB(Integer.valueOf(String.valueOf(newValue)));
+        if (preference == mWidgetBgColorPref) {
+            String hex = ColorPickerPreference.convertToARGB(Integer
+                    .valueOf(String.valueOf(newValue)));
             preference.setSummary(hex);
             int intHex = ColorPickerPreference.convertToColorInt(hex);
-            final SharedPreferences.Editor editor = mPreferences
-                    .edit();
+            final SharedPreferences.Editor editor = mPreferences.edit();
+            editor.putInt(PREF_WIDGET_BG_COLOR, intHex);
+            editor.commit();
+            Helpers.updateAppWidget(this);
+            return true;
+        } else if (preference == mWidgetTextColorPref) {
+            String hex = ColorPickerPreference.convertToARGB(Integer
+                    .valueOf(String.valueOf(newValue)));
+            preference.setSummary(hex);
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            final SharedPreferences.Editor editor = mPreferences.edit();
             editor.putInt(PREF_WIDGET_TEXT_COLOR, intHex);
             editor.commit();
             Helpers.updateAppWidget(this);
