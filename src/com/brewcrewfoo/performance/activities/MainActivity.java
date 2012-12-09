@@ -20,8 +20,8 @@ package com.brewcrewfoo.performance.activities;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.FragmentManager;
 import android.app.Fragment;
+import android.app.FragmentManager;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -33,13 +33,8 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
-
 import com.brewcrewfoo.performance.R;
-import com.brewcrewfoo.performance.fragments.Advanced;
-import com.brewcrewfoo.performance.fragments.CPUInfo;
-import com.brewcrewfoo.performance.fragments.CPUSettings;
-import com.brewcrewfoo.performance.fragments.TimeInState;
-import com.brewcrewfoo.performance.fragments.VoltageControlSettings;
+import com.brewcrewfoo.performance.fragments.*;
 import com.brewcrewfoo.performance.util.ActivityThemeChangeInterface;
 import com.brewcrewfoo.performance.util.Constants;
 import com.brewcrewfoo.performance.util.Helpers;
@@ -47,12 +42,12 @@ import com.brewcrewfoo.performance.util.Helpers;
 public class MainActivity extends Activity implements Constants,
         ActivityThemeChangeInterface {
 
-    SharedPreferences      mPreferences;
-    PagerTabStrip          mPagerTabStrip;
-    ViewPager              mViewPager;
+    SharedPreferences mPreferences;
+    PagerTabStrip mPagerTabStrip;
+    ViewPager mViewPager;
 
     private static boolean mVoltageExists;
-    private boolean        mIsLightTheme;
+    private boolean mIsLightTheme;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -78,8 +73,8 @@ public class MainActivity extends Activity implements Constants,
     }
 
     class TitleAdapter extends FragmentPagerAdapter {
-        String           titles[] = getTitles();
-        private Fragment frags[]  = new Fragment[titles.length];
+        String titles[] = getTitles();
+        private Fragment frags[] = new Fragment[titles.length];
 
         public TitleAdapter(FragmentManager fm) {
             super(fm);
@@ -174,7 +169,7 @@ public class MainActivity extends Activity implements Constants,
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog,
-                                    int which) {
+                                                int which) {
                                 String message = getString(R.string.su_cancel_message);
                                 SharedPreferences.Editor e = mPreferences
                                         .edit();
@@ -210,11 +205,9 @@ public class MainActivity extends Activity implements Constants,
     /**
      * Display the result of the check for root access so the user knows what to
      * expect in respect to functionality of the application.
-     * 
-     * @param title
-     *            Oops or OK depending on the result
-     * @param message
-     *            Success or fail message
+     *
+     * @param title   Oops or OK depending on the result
+     * @param message Success or fail message
      */
     private void suResultDialog(String title, String message) {
         LayoutInflater factory = LayoutInflater.from(this);
@@ -234,17 +227,17 @@ public class MainActivity extends Activity implements Constants,
      * Get a list of titles for the tabstrip to display depending on if the
      * voltage control fragment will be displayed. (Depends on the result of
      * Helpers.voltageTableExists()
-     * 
+     *
      * @return String[] containing titles
      */
     private String[] getTitles() {
         String titleString[];
         if (mVoltageExists) {
-            titleString = new String[] { "CPU SETTINGS", "VOLTAGE SETTINGS",
-                    "ADVANCED SETTINGS", "TIME IN STATE", "CPU INFO" };
+            titleString = new String[]{"CPU SETTINGS", "VOLTAGE SETTINGS",
+                    "ADVANCED SETTINGS", "TIME IN STATE", "CPU INFO"};
         } else {
-            titleString = new String[] { "CPU SETTINGS", "ADVANCED SETTINGS",
-                    "TIME IN STATE", "CPU INFO" };
+            titleString = new String[]{"CPU SETTINGS", "ADVANCED SETTINGS",
+                    "TIME IN STATE", "CPU INFO"};
         }
         return titleString;
     }

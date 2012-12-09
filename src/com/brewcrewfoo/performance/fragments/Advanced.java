@@ -18,8 +18,6 @@
 
 package com.brewcrewfoo.performance.fragments;
 
-import java.io.File;
-
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -28,55 +26,45 @@ import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.content.res.Resources;
 import android.os.Bundle;
-import android.preference.CheckBoxPreference;
-import android.preference.ListPreference;
-import android.preference.Preference;
+import android.preference.*;
 import android.preference.Preference.OnPreferenceChangeListener;
-import android.preference.PreferenceCategory;
-import android.preference.PreferenceFragment;
-import android.preference.PreferenceManager;
-import android.preference.PreferenceScreen;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
-import android.view.KeyEvent;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.view.View;
+import android.view.*;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.SeekBar;
-import android.widget.TextView;
 import android.widget.SeekBar.OnSeekBarChangeListener;
-
+import android.widget.TextView;
 import com.brewcrewfoo.performance.R;
 import com.brewcrewfoo.performance.activities.PCSettings;
 import com.brewcrewfoo.performance.util.CMDProcessor;
 import com.brewcrewfoo.performance.util.Constants;
 import com.brewcrewfoo.performance.util.Helpers;
 
+import java.io.File;
+
 public class Advanced extends PreferenceFragment implements
         OnSharedPreferenceChangeListener, OnPreferenceChangeListener, Constants {
 
-    private Preference         mDirtyRatio;
-    private Preference         mDirtyBackground;
-    private Preference         mDirtyExpireCentisecs;
-    private Preference         mDirtyWriteback;
-    private Preference         mMinFreeK;
-    private Preference         mOvercommit;
-    private Preference         mSwappiness;
-    private Preference         mVfs;
-    private ListPreference     mFreeMem;
-    private ListPreference     mReadAhead;
+    private Preference mDirtyRatio;
+    private Preference mDirtyBackground;
+    private Preference mDirtyExpireCentisecs;
+    private Preference mDirtyWriteback;
+    private Preference mMinFreeK;
+    private Preference mOvercommit;
+    private Preference mSwappiness;
+    private Preference mVfs;
+    private ListPreference mFreeMem;
+    private ListPreference mReadAhead;
     private CheckBoxPreference mFastCharge;
 
-    private SharedPreferences  mPreferences;
-    protected Context          mContext;
+    private SharedPreferences mPreferences;
+    protected Context mContext;
 
-    private int                mSeekbarProgress;
-    private EditText           settingText;
+    private int mSeekbarProgress;
+    private EditText settingText;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -164,7 +152,7 @@ public class Advanced extends PreferenceFragment implements
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
-            Preference preference) {
+                                         Preference preference) {
         String key = preference.getKey();
         if (PREF_FASTCHARGE.equals(key)) {
             if (mPreferences.getBoolean(PREF_FASTCHARGE, false)) {
@@ -176,7 +164,7 @@ public class Advanced extends PreferenceFragment implements
                                 new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialog,
-                                            int which) {
+                                                        int which) {
                                         mPreferences
                                                 .edit()
                                                 .putBoolean(PREF_FASTCHARGE,
@@ -188,7 +176,7 @@ public class Advanced extends PreferenceFragment implements
                                 new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialog,
-                                            int which) {
+                                                        int which) {
                                         mPreferences
                                                 .edit()
                                                 .putBoolean(PREF_FASTCHARGE,
@@ -309,7 +297,7 @@ public class Advanced extends PreferenceFragment implements
     }
 
     public void openDialog(int currentProgress, String title, final int max,
-            final Preference pref, final String path, final String key) {
+                           final Preference pref, final String path, final String key) {
         Resources res = getActivity().getResources();
         String cancel = res.getString(R.string.cancel);
         String ok = res.getString(R.string.ok);
@@ -326,7 +314,7 @@ public class Advanced extends PreferenceFragment implements
                 .setOnEditorActionListener(new TextView.OnEditorActionListener() {
                     @Override
                     public boolean onEditorAction(TextView v, int actionId,
-                            KeyEvent event) {
+                                                  KeyEvent event) {
                         if (actionId == EditorInfo.IME_ACTION_DONE) {
                             int val = Integer.valueOf(settingText.getText()
                                     .toString());
@@ -340,12 +328,12 @@ public class Advanced extends PreferenceFragment implements
         settingText.addTextChangedListener(new TextWatcher() {
             @Override
             public void onTextChanged(CharSequence s, int start, int before,
-                    int count) {
+                                      int count) {
             }
 
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count,
-                    int after) {
+                                          int after) {
             }
 
             @Override
@@ -363,7 +351,7 @@ public class Advanced extends PreferenceFragment implements
         OnSeekBarChangeListener seekBarChangeListener = new OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekbar, int progress,
-                    boolean fromUser) {
+                                          boolean fromUser) {
                 mSeekbarProgress = seekbar.getProgress();
                 settingText.setText(Integer.toString(mSeekbarProgress));
             }
@@ -385,7 +373,7 @@ public class Advanced extends PreferenceFragment implements
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog,
-                                    int which) {
+                                                int which) {
                                 // nothing
                             }
                         })

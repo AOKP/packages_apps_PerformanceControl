@@ -30,23 +30,23 @@ import android.widget.LinearLayout;
 
 /**
  * A preference type that allows a user to choose a time
- * 
+ *
  * @author Sergey Margaritov
  */
 public class ColorPickerPreference extends Preference implements
         Preference.OnPreferenceClickListener,
         ColorPickerDialog.OnColorChangedListener {
 
-    View                        mView;
-    LinearLayout                widgetFrameView;
-    int                         mDefaultValue       = Color.BLACK;
-    private int                 mValue              = Color.BLACK;
-    private float               mDensity            = 0;
-    private boolean             mAlphaSliderEnabled = false;
+    View mView;
+    LinearLayout widgetFrameView;
+    int mDefaultValue = Color.BLACK;
+    private int mValue = Color.BLACK;
+    private float mDensity = 0;
+    private boolean mAlphaSliderEnabled = false;
 
-    private static final String androidns           = "http://schemas.android.com/apk/res/android";
+    private static final String androidns = "http://schemas.android.com/apk/res/android";
 
-    private EditText            mEditText;
+    private EditText mEditText;
 
     public ColorPickerPreference(Context context) {
         super(context);
@@ -59,7 +59,7 @@ public class ColorPickerPreference extends Preference implements
     }
 
     public ColorPickerPreference(Context context, AttributeSet attrs,
-            int defStyle) {
+                                 int defStyle) {
         super(context, attrs, defStyle);
         init(context, attrs);
     }
@@ -198,7 +198,7 @@ public class ColorPickerPreference extends Preference implements
 
     /**
      * Toggle Alpha Slider visibility (by default it's disabled)
-     * 
+     *
      * @param enable
      */
     public void setAlphaSliderEnabled(boolean enable) {
@@ -207,7 +207,7 @@ public class ColorPickerPreference extends Preference implements
 
     /**
      * For custom purposes. Not used by ColorPickerPreferrence
-     * 
+     *
      * @param color
      * @author Unknown
      */
@@ -238,7 +238,7 @@ public class ColorPickerPreference extends Preference implements
 
     /**
      * For custom purposes. Not used by ColorPickerPreferrence
-     * 
+     *
      * @param argb
      * @throws NumberFormatException
      * @author Unknown

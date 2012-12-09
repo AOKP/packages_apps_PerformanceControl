@@ -28,7 +28,6 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.widget.RemoteViews;
-
 import com.brewcrewfoo.performance.R;
 import com.brewcrewfoo.performance.activities.MainActivity;
 import com.brewcrewfoo.performance.util.Constants;
@@ -54,7 +53,7 @@ public class PCWidget extends AppWidgetProvider implements Constants {
 
     @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager,
-            int[] appWidgetIds) {
+                         int[] appWidgetIds) {
         for (int awi : appWidgetIds) {
             String max = Helpers.readOneLine(MAX_FREQ_PATH);
             String min = Helpers.readOneLine(MIN_FREQ_PATH);
@@ -65,8 +64,8 @@ public class PCWidget extends AppWidgetProvider implements Constants {
     }
 
     public void onUpdateWidget(Context context,
-            AppWidgetManager appWidgetManager, int appWidgetId, String max,
-            String min, String gov, String io) {
+                               AppWidgetManager appWidgetManager, int appWidgetId, String max,
+                               String min, String gov, String io) {
         mPreferences = PreferenceManager.getDefaultSharedPreferences(context);
         RemoteViews views = new RemoteViews(context.getPackageName(),
                 R.layout.widget);

@@ -27,20 +27,18 @@ import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.IBinder;
 import android.preference.PreferenceManager;
+import com.brewcrewfoo.performance.R;
+import com.brewcrewfoo.performance.fragments.VoltageControlSettings;
+import com.brewcrewfoo.performance.util.CMDProcessor;
+import com.brewcrewfoo.performance.util.Constants;
+import com.brewcrewfoo.performance.util.Helpers;
+import com.brewcrewfoo.performance.util.Voltage;
 
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
-
-import com.brewcrewfoo.performance.R;
-
-import com.brewcrewfoo.performance.fragments.VoltageControlSettings;
-import com.brewcrewfoo.performance.util.CMDProcessor;
-import com.brewcrewfoo.performance.util.Constants;
-import com.brewcrewfoo.performance.util.Helpers;
-import com.brewcrewfoo.performance.util.Voltage;
 
 public class BootService extends Service implements Constants {
 
@@ -127,7 +125,7 @@ public class BootService extends Service implements Constants {
                             + sb.toString()
                             + " > "
                             + Helpers.getVoltagePath().replace("cpu0",
-                                    "cpu" + i));
+                            "cpu" + i));
                 }
             }
             boolean FChargeOn = preferences.getBoolean(PREF_FASTCHARGE, false);
@@ -181,43 +179,43 @@ public class BootService extends Service implements Constants {
             if (preferences.getBoolean(VM_SOB, false)) {
                 new CMDProcessor().su.runWaitFor("busybox echo "
                         + preferences.getInt(PREF_DIRTY_RATIO,
-                                Integer.parseInt(Helpers
-                                        .readOneLine(DIRTY_RATIO_PATH)))
+                        Integer.parseInt(Helpers
+                                .readOneLine(DIRTY_RATIO_PATH)))
                         + " > " + DIRTY_RATIO_PATH);
                 new CMDProcessor().su.runWaitFor("busybox echo "
                         + preferences.getInt(PREF_DIRTY_BACKGROUND, Integer
-                                .parseInt(Helpers
-                                        .readOneLine(DIRTY_BACKGROUND_PATH)))
+                        .parseInt(Helpers
+                                .readOneLine(DIRTY_BACKGROUND_PATH)))
                         + " > " + DIRTY_BACKGROUND_PATH);
                 new CMDProcessor().su.runWaitFor("busybox echo "
                         + preferences.getInt(PREF_DIRTY_EXPIRE, Integer
-                                .parseInt(Helpers
-                                        .readOneLine(DIRTY_EXPIRE_PATH)))
+                        .parseInt(Helpers
+                                .readOneLine(DIRTY_EXPIRE_PATH)))
                         + " > " + DIRTY_EXPIRE_PATH);
                 new CMDProcessor().su.runWaitFor("busybox echo "
                         + preferences.getInt(PREF_DIRTY_WRITEBACK, Integer
-                                .parseInt(Helpers
-                                        .readOneLine(DIRTY_WRITEBACK_PATH)))
+                        .parseInt(Helpers
+                                .readOneLine(DIRTY_WRITEBACK_PATH)))
                         + " > " + DIRTY_WRITEBACK_PATH);
                 new CMDProcessor().su.runWaitFor("busybox echo "
                         + preferences.getInt(PREF_MIN_FREE_KB, Integer
-                                .parseInt(Helpers.readOneLine(MIN_FREE_PATH)))
+                        .parseInt(Helpers.readOneLine(MIN_FREE_PATH)))
                         + " > " + MIN_FREE_PATH);
                 new CMDProcessor().su
                         .runWaitFor("busybox echo "
                                 + preferences.getInt(PREF_OVERCOMMIT, Integer
-                                        .parseInt(Helpers
-                                                .readOneLine(OVERCOMMIT_PATH)))
+                                .parseInt(Helpers
+                                        .readOneLine(OVERCOMMIT_PATH)))
                                 + " > " + OVERCOMMIT_PATH);
                 new CMDProcessor().su
                         .runWaitFor("busybox echo "
                                 + preferences.getInt(PREF_SWAPPINESS, Integer
-                                        .parseInt(Helpers
-                                                .readOneLine(SWAPPINESS_PATH)))
+                                .parseInt(Helpers
+                                        .readOneLine(SWAPPINESS_PATH)))
                                 + " > " + SWAPPINESS_PATH);
                 new CMDProcessor().su.runWaitFor("busybox echo "
                         + preferences.getInt(PREF_VFS, Integer.parseInt(Helpers
-                                .readOneLine(VFS_CACHE_PRESSURE_PATH))) + " > "
+                        .readOneLine(VFS_CACHE_PRESSURE_PATH))) + " > "
                         + VFS_CACHE_PRESSURE_PATH);
             }
 

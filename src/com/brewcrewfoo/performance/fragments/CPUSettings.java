@@ -19,67 +19,52 @@
 package com.brewcrewfoo.performance.fragments;
 
 import android.app.Fragment;
-import android.appwidget.AppWidgetManager;
-import android.content.ComponentName;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.preference.PreferenceManager;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.AdapterView;
+import android.view.*;
+import android.widget.*;
 import android.widget.AdapterView.OnItemSelectedListener;
-import android.widget.CompoundButton;
-import android.widget.TextView;
-import android.widget.SeekBar;
-import android.widget.Spinner;
-import android.widget.Switch;
-
-import java.io.File;
-import java.util.Arrays;
-import java.util.Comparator;
-
 import com.brewcrewfoo.performance.R;
 import com.brewcrewfoo.performance.activities.PCSettings;
 import com.brewcrewfoo.performance.util.CMDProcessor;
 import com.brewcrewfoo.performance.util.Constants;
 import com.brewcrewfoo.performance.util.Helpers;
-import com.brewcrewfoo.performance.widget.PCWidget;
+
+import java.io.File;
+import java.util.Arrays;
+import java.util.Comparator;
 
 public class CPUSettings extends Fragment implements
         SeekBar.OnSeekBarChangeListener, Constants {
 
-    private SeekBar           mMaxSlider;
-    private SeekBar           mMinSlider;
-    private Spinner           mGovernor;
-    private Spinner           mIo;
-    private Switch            mSetOnBoot;
-    private TextView          mCurFreq;
-    private TextView          mMaxSpeedText;
-    private TextView          mMinSpeedText;
-    private String[]          mAvailableFrequencies;
-    private String[]          mAvailableGovernors;
-    private String[]          mAvailableIo;
+    private SeekBar mMaxSlider;
+    private SeekBar mMinSlider;
+    private Spinner mGovernor;
+    private Spinner mIo;
+    private Switch mSetOnBoot;
+    private TextView mCurFreq;
+    private TextView mMaxSpeedText;
+    private TextView mMinSpeedText;
+    private String[] mAvailableFrequencies;
+    private String[] mAvailableGovernors;
+    private String[] mAvailableIo;
 
-    private String            mMaxFreqSetting;
-    private String            mMinFreqSetting;
-    private String            mCurrentGovernor;
-    private String            mCurrentIo;
-    private String            mCurMaxSpeed;
-    private String            mCurMinSpeed;
+    private String mMaxFreqSetting;
+    private String mMinFreqSetting;
+    private String mCurrentGovernor;
+    private String mCurrentIo;
+    private String mCurMaxSpeed;
+    private String mCurMinSpeed;
 
-    private CurCPUThread      mCurCPUThread;
+    private CurCPUThread mCurCPUThread;
     private SharedPreferences mPreferences;
 
-    private boolean           mIsTegra3 = false;
-    private int               mFrequenciesNum;
+    private boolean mIsTegra3 = false;
+    private int mFrequenciesNum;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -131,7 +116,7 @@ public class CPUSettings extends Fragment implements
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup root,
-            Bundle savedInstanceState) {
+                             Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.cpu_settings, root, false);
 
         mCurFreq = (TextView) view.findViewById(R.id.current_speed);
@@ -191,7 +176,7 @@ public class CPUSettings extends Fragment implements
                 .setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                     @Override
                     public void onCheckedChanged(CompoundButton v,
-                            boolean checked) {
+                                                 boolean checked) {
                         final SharedPreferences.Editor editor = mPreferences
                                 .edit();
                         editor.putBoolean(CPU_SOB, checked);
@@ -218,7 +203,7 @@ public class CPUSettings extends Fragment implements
 
     @Override
     public void onProgressChanged(SeekBar seekBar, int progress,
-            boolean fromUser) {
+                                  boolean fromUser) {
         if (fromUser) {
             if (seekBar.getId() == R.id.max_slider) {
                 setMaxSpeed(seekBar, progress);
@@ -251,7 +236,7 @@ public class CPUSettings extends Fragment implements
 
     public class GovListener implements OnItemSelectedListener {
         public void onItemSelected(AdapterView<?> parent, View view, int pos,
-                long id) {
+                                   long id) {
             String selected = parent.getItemAtPosition(pos).toString();
 
             // do this on all cpu's since MSM can have different governors on
@@ -271,7 +256,7 @@ public class CPUSettings extends Fragment implements
 
     public class IOListener implements OnItemSelectedListener {
         public void onItemSelected(AdapterView<?> parent, View view, int pos,
-                long id) {
+                                   long id) {
             String selected = parent.getItemAtPosition(pos).toString();
             new CMDProcessor().su.runWaitFor("busybox echo " + selected + " > "
                     + IO_SCHEDULER_PATH);
@@ -360,14 +345,16 @@ public class CPUSettings extends Fragment implements
                 return;
             }
         }
-    };
+    }
+
+    ;
 
     protected Handler mCurCPUHandler = new Handler() {
-                                         public void handleMessage(Message msg) {
-                                             mCurFreq.setText(Helpers
-                                                     .toMHz((String) msg.obj));
-                                         }
-                                     };
+        public void handleMessage(Message msg) {
+            mCurFreq.setText(Helpers
+                    .toMHz((String) msg.obj));
+        }
+    };
 
     private void updateSharedPrefs(String var, String value) {
         final SharedPreferences.Editor editor = mPreferences.edit();

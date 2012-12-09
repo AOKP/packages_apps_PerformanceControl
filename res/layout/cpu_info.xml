@@ -18,40 +18,40 @@ Copyright (C) 2012  James Roberts
 -->
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical" >
-
-        <TextView
-            style="?android:attr/listSeparatorTextViewStyle"
-            android:text="@string/kernel_info" />
-
-        <TextView
-            android:id="@+id/kernel_info"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
         <TextView
-            style="?android:attr/listSeparatorTextViewStyle"
-            android:text="@string/cpu_info" />
+                style="?android:attr/listSeparatorTextViewStyle"
+                android:text="@string/kernel_info"/>
 
         <TextView
-            android:id="@+id/cpu_info"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+                android:id="@+id/kernel_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
         <TextView
-            style="?android:attr/listSeparatorTextViewStyle"
-            android:text="@string/mem_info" />
+                style="?android:attr/listSeparatorTextViewStyle"
+                android:text="@string/cpu_info"/>
 
         <TextView
-            android:id="@+id/mem_info"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+                android:id="@+id/cpu_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        <TextView
+                style="?android:attr/listSeparatorTextViewStyle"
+                android:text="@string/mem_info"/>
+
+        <TextView
+                android:id="@+id/mem_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
     </LinearLayout>
 
 </ScrollView>

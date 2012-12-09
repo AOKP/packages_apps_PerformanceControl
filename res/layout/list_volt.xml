@@ -19,28 +19,28 @@ Copyright (C) 2012  James Roberts
 -->
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical" >
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
 
     <TextView
-        android:id="@+id/Freq"
-        style="?android:attr/listSeparatorTextViewStyle"
-        android:text="@string/freq" />
+            android:id="@+id/Freq"
+            style="?android:attr/listSeparatorTextViewStyle"
+            android:text="@string/freq"/>
 
     <TextView
-        android:id="@+id/mVCurrent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="3dip"
-        android:text="@string/current" />
+            android:id="@+id/mVCurrent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dip"
+            android:text="@string/current"/>
 
     <TextView
-        android:id="@+id/mVSaved"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="3dip"
-        android:layout_marginTop="3dip"
-        android:text="@string/saved" />
+            android:id="@+id/mVSaved"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="3dip"
+            android:layout_marginTop="3dip"
+            android:text="@string/saved"/>
 
 </LinearLayout>

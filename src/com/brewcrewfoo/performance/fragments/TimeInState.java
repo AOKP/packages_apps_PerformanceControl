@@ -19,11 +19,6 @@
 
 package com.brewcrewfoo.performance.fragments;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import android.annotation.SuppressLint;
 import android.app.Fragment;
 import android.content.Context;
@@ -32,34 +27,33 @@ import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
+import android.view.*;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-
 import com.brewcrewfoo.performance.R;
 import com.brewcrewfoo.performance.activities.PCSettings;
 import com.brewcrewfoo.performance.util.CPUStateMonitor;
-import com.brewcrewfoo.performance.util.Constants;
 import com.brewcrewfoo.performance.util.CPUStateMonitor.CPUStateMonitorException;
 import com.brewcrewfoo.performance.util.CPUStateMonitor.CpuState;
+import com.brewcrewfoo.performance.util.Constants;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class TimeInState extends Fragment implements Constants {
 
-    private LinearLayout             mStatesView;
-    private TextView                 mAdditionalStates;
-    private TextView                 mTotalStateTime;
-    private TextView                 mHeaderAdditionalStates;
-    private TextView                 mHeaderTotalStateTime;
-    private TextView                 mStatesWarning;
-    private boolean                  mUpdatingData = false;
+    private LinearLayout mStatesView;
+    private TextView mAdditionalStates;
+    private TextView mTotalStateTime;
+    private TextView mHeaderAdditionalStates;
+    private TextView mHeaderTotalStateTime;
+    private TextView mStatesWarning;
+    private boolean mUpdatingData = false;
 
-    private CPUStateMonitor          monitor       = new CPUStateMonitor();
+    private CPUStateMonitor monitor = new CPUStateMonitor();
     private static SharedPreferences preferences;
 
     @Override
@@ -79,7 +73,7 @@ public class TimeInState extends Fragment implements Constants {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup root,
-            Bundle savedInstanceState) {
+                             Bundle savedInstanceState) {
         super.onCreateView(inflater, root, savedInstanceState);
 
         View view = inflater.inflate(R.layout.time_in_state, root, false);

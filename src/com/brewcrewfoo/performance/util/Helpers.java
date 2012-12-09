@@ -18,15 +18,6 @@
 
 package com.brewcrewfoo.performance.util;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-
-import com.brewcrewfoo.performance.widget.PCWidget;
-
 import android.app.Activity;
 import android.appwidget.AppWidgetManager;
 import android.content.ComponentName;
@@ -35,6 +26,9 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.util.Log;
+import com.brewcrewfoo.performance.widget.PCWidget;
+
+import java.io.*;
 
 public class Helpers implements Constants {
 
@@ -42,7 +36,7 @@ public class Helpers implements Constants {
 
     /**
      * Checks device for SuperUser permission
-     * 
+     *
      * @return If SU was granted or denied
      */
     public static boolean checkSu() {
@@ -69,7 +63,7 @@ public class Helpers implements Constants {
 
     /**
      * Checks to see if Busybox is installed in "/system/"
-     * 
+     *
      * @return If busybox exists
      */
     public static boolean checkBusybox() {
@@ -93,7 +87,7 @@ public class Helpers implements Constants {
 
     /**
      * Return mount points
-     * 
+     *
      * @param path
      * @return line if present
      */
@@ -118,7 +112,7 @@ public class Helpers implements Constants {
 
     /**
      * Get mounts
-     * 
+     *
      * @param mount
      * @return success or failure
      */
@@ -141,7 +135,7 @@ public class Helpers implements Constants {
 
     /**
      * Read one line from file
-     * 
+     *
      * @param fname
      * @return line
      */
@@ -165,7 +159,7 @@ public class Helpers implements Constants {
 
     /**
      * Read file via shell
-     * 
+     *
      * @param filePath
      * @param useSu
      * @return file output
@@ -184,7 +178,7 @@ public class Helpers implements Constants {
 
     /**
      * Write one line to a file
-     * 
+     *
      * @param fname
      * @param value
      * @return if line was written
@@ -207,7 +201,7 @@ public class Helpers implements Constants {
 
     /**
      * Gets available schedulers from file
-     * 
+     *
      * @return available schedulers
      */
     public static String[] getAvailableIOSchedulers() {
@@ -228,7 +222,7 @@ public class Helpers implements Constants {
 
     /**
      * Reads string array from file
-     * 
+     *
      * @param fname
      * @return string array
      */
@@ -242,7 +236,7 @@ public class Helpers implements Constants {
 
     /**
      * Get current IO Scheduler
-     * 
+     *
      * @return current io scheduler
      */
     public static String getIOScheduler() {
@@ -261,7 +255,7 @@ public class Helpers implements Constants {
 
     /**
      * Get total number of cpus
-     * 
+     *
      * @return total number of cpus
      */
     public static int getNumOfCpus() {
@@ -287,9 +281,9 @@ public class Helpers implements Constants {
     /**
      * Check if any voltage control tables exist and set the voltage path if a
      * file is found.
-     * 
+     * <p/>
      * If false is returned, there was no tables found and none will be used.
-     * 
+     *
      * @return true/false if uv table exists
      */
     public static boolean voltageFileExists() {
@@ -308,7 +302,7 @@ public class Helpers implements Constants {
 
     /**
      * Sets the voltage file to be used by the rest of the app elsewhere.
-     * 
+     *
      * @param voltageFile
      */
     public static void setVoltagePath(String voltageFile) {
@@ -318,7 +312,7 @@ public class Helpers implements Constants {
 
     /**
      * Gets the currently set voltage path
-     * 
+     *
      * @return voltage path
      */
     public static String getVoltagePath() {
@@ -327,7 +321,7 @@ public class Helpers implements Constants {
 
     /**
      * Convert to MHz and append a tag
-     * 
+     *
      * @param mhzString
      * @return tagged and converted String
      */
@@ -338,7 +332,7 @@ public class Helpers implements Constants {
 
     /**
      * Restart the activity smoothly
-     * 
+     *
      * @param activity
      */
     public static void restartPC(final Activity activity) {
@@ -354,7 +348,7 @@ public class Helpers implements Constants {
 
     /**
      * Helper to update the app widget
-     * 
+     *
      * @param context
      */
     public static void updateAppWidget(Context context) {
@@ -370,7 +364,7 @@ public class Helpers implements Constants {
 
     /**
      * Helper to create a bitmap to set as imageview or bg
-     * 
+     *
      * @param bgcolor
      * @return bitmap
      */

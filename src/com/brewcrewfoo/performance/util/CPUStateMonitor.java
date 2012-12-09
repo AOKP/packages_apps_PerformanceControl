@@ -19,26 +19,16 @@
 
 package com.brewcrewfoo.performance.util;
 
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import com.brewcrewfoo.performance.util.Constants;
-
 import android.annotation.SuppressLint;
 import android.os.SystemClock;
+
+import java.io.*;
+import java.util.*;
 
 @SuppressLint("UseSparseArrays")
 public class CPUStateMonitor implements Constants {
 
-    private List<CpuState>     mStates  = new ArrayList<CpuState>();
+    private List<CpuState> mStates = new ArrayList<CpuState>();
     private Map<Integer, Long> mOffsets = new HashMap<Integer, Long>();
 
     @SuppressWarnings("serial")
@@ -48,14 +38,14 @@ public class CPUStateMonitor implements Constants {
         }
     }
 
-    @SuppressLint({ "UseValueOf", "UseValueOf" })
+    @SuppressLint({"UseValueOf", "UseValueOf"})
     public class CpuState implements Comparable<CpuState> {
         public CpuState(int a, long b) {
             freq = a;
             duration = b;
         }
 
-        public int  freq     = 0;
+        public int freq = 0;
         public long duration = 0;
 
         public int compareTo(CpuState state) {

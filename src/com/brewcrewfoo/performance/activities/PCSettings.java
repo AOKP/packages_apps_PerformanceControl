@@ -18,29 +18,24 @@
 
 package com.brewcrewfoo.performance.activities;
 
-import net.margaritov.preference.colorpicker.ColorPickerPreference;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.CheckBoxPreference;
-import android.preference.Preference;
+import android.preference.*;
 import android.preference.Preference.OnPreferenceChangeListener;
-import android.preference.PreferenceActivity;
-import android.preference.PreferenceManager;
-import android.preference.PreferenceScreen;
-
 import com.brewcrewfoo.performance.R;
 import com.brewcrewfoo.performance.util.ActivityThemeChangeInterface;
 import com.brewcrewfoo.performance.util.Constants;
 import com.brewcrewfoo.performance.util.Helpers;
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 public class PCSettings extends PreferenceActivity implements Constants,
         ActivityThemeChangeInterface, OnPreferenceChangeListener {
 
-    SharedPreferences             mPreferences;
-    private CheckBoxPreference    mLightThemePref;
+    SharedPreferences mPreferences;
+    private CheckBoxPreference mLightThemePref;
     private ColorPickerPreference mWidgetBgColorPref;
     private ColorPickerPreference mWidgetTextColorPref;
-    private Preference            mVersion;
+    private Preference mVersion;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -64,7 +59,7 @@ public class PCSettings extends PreferenceActivity implements Constants,
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
-            Preference preference) {
+                                         Preference preference) {
         String key = preference.getKey();
         if ("use_light_theme".equals(key)) {
             Helpers.restartPC(this);

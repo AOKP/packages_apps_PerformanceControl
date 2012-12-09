@@ -18,23 +18,23 @@ Copyright (C) 2012  James Roberts
 -->
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content" >
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content">
 
     <CheckBoxPreference
-        android:key="use_light_theme"
-        android:summary="@string/ps_use_light_theme"
-        android:title="@string/pt_use_light_theme" />
+            android:key="use_light_theme"
+            android:summary="@string/ps_use_light_theme"
+            android:title="@string/pt_use_light_theme"/>
 
     <net.margaritov.preference.colorpicker.ColorPickerPreference
-        android:defaultValue="#ff000000"
-        android:key="widget_bg_color"
-        android:title="@string/pt_widget_bg_color" />
+            android:defaultValue="#ff000000"
+            android:key="widget_bg_color"
+            android:title="@string/pt_widget_bg_color"/>
     <net.margaritov.preference.colorpicker.ColorPickerPreference
-        android:defaultValue="#ff808080"
-        android:key="widget_text_color"
-        android:title="@string/pt_widget_text_color" />
+            android:defaultValue="#ff808080"
+            android:key="widget_text_color"
+            android:title="@string/pt_widget_text_color"/>
 
-    <Preference android:key="version_info" />
+    <Preference android:key="version_info"/>
 
 </PreferenceScreen>

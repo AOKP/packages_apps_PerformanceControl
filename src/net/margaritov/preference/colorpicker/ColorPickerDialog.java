@@ -25,20 +25,19 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-
 import com.brewcrewfoo.performance.R;
 
 public class ColorPickerDialog extends Dialog implements
         ColorPickerView.OnColorChangedListener, View.OnClickListener {
 
-    private ColorPickerView        mColorPicker;
+    private ColorPickerView mColorPicker;
 
-    private ColorPickerPanelView   mOldColor;
-    private ColorPickerPanelView   mNewColor;
+    private ColorPickerPanelView mOldColor;
+    private ColorPickerPanelView mNewColor;
 
-    private EditText               mHex;
-    private Button                 mSetButton;
-    private Button                 mIcsColor;
+    private EditText mHex;
+    private Button mSetButton;
+    private Button mIcsColor;
 
     private OnColorChangedListener mListener;
 
@@ -140,7 +139,7 @@ public class ColorPickerDialog extends Dialog implements
     /**
      * Set a OnColorChangedListener to get notified when the color selected by
      * the user has changed.
-     * 
+     *
      * @param listener
      */
     public void setOnColorChangedListener(OnColorChangedListener listener) {

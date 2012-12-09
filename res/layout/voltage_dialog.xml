@@ -19,55 +19,55 @@ Copyright (C) 2012  James Roberts
 -->
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/layout_root"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+            android:id="@+id/layout_root"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
     <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="10.0dip" >
-
-        <RelativeLayout
             xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/voltageDialogLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="10.0dip" >
+            android:orientation="vertical"
+            android:padding="10.0dip">
 
-            <EditText
-                android:id="@+id/voltageEdit"
-                android:layout_width="60.0dip"
-                android:layout_height="wrap_content"
-                android:inputType="number"
-                android:maxLength="4"
-                android:paddingRight="5.0dip"
-                android:paddingTop="10.0dip" />
-
-            <SeekBar
-                android:id="@+id/voltageSeek"
+        <RelativeLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/voltageDialogLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/voltageEdit"
-                android:max="100"
-                android:paddingLeft="10.0dip"
-                android:paddingTop="12.0dip"
-                android:progress="50" />
+                android:paddingTop="10.0dip">
+
+            <EditText
+                    android:id="@+id/voltageEdit"
+                    android:layout_width="60.0dip"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:maxLength="4"
+                    android:paddingRight="5.0dip"
+                    android:paddingTop="10.0dip"/>
+
+            <SeekBar
+                    android:id="@+id/voltageSeek"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/voltageEdit"
+                    android:max="100"
+                    android:paddingLeft="10.0dip"
+                    android:paddingTop="12.0dip"
+                    android:progress="50"/>
 
             <TextView
-                android:id="@+id/voltageMeter"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/voltageSeek"
-                android:paddingLeft="14.0dip"
-                android:paddingTop="40.0dip"
-                android:shadowColor="#ffffffff"
-                android:shadowRadius="3.0"
-                android:textColor="#ffffffff"
-                android:textSize="18.0dip"
-                android:typeface="monospace" />
+                    android:id="@+id/voltageMeter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/voltageSeek"
+                    android:paddingLeft="14.0dip"
+                    android:paddingTop="40.0dip"
+                    android:shadowColor="#ffffffff"
+                    android:shadowRadius="3.0"
+                    android:textColor="#ffffffff"
+                    android:textSize="18.0dip"
+                    android:typeface="monospace"/>
         </RelativeLayout>
     </LinearLayout>
 

@@ -17,44 +17,44 @@ Copyright (C) 2012  James Roberts
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
 
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
     <Preference
-        android:key="pref_dirty_ratio"
-        android:title="@string/dirty_ratio_title" />
+            android:key="pref_dirty_ratio"
+            android:title="@string/dirty_ratio_title"/>
 
     <Preference
-        android:key="pref_dirty_background"
-        android:title="@string/dirty_background_title" />
+            android:key="pref_dirty_background"
+            android:title="@string/dirty_background_title"/>
 
     <Preference
-        android:key="pref_dirty_expire"
-        android:title="@string/dirty_expire_title" />
+            android:key="pref_dirty_expire"
+            android:title="@string/dirty_expire_title"/>
 
     <Preference
-        android:key="pref_dirty_writeback"
-        android:title="@string/dirty_writeback_title" />
+            android:key="pref_dirty_writeback"
+            android:title="@string/dirty_writeback_title"/>
 
     <Preference
-        android:key="pref_min_free_kb"
-        android:title="@string/min_free_title" />
+            android:key="pref_min_free_kb"
+            android:title="@string/min_free_title"/>
 
     <Preference
-        android:key="pref_overcommit"
-        android:title="@string/overcommit_title" />
+            android:key="pref_overcommit"
+            android:title="@string/overcommit_title"/>
 
     <Preference
-        android:key="pref_swappiness"
-        android:title="@string/swappiness_title" />
+            android:key="pref_swappiness"
+            android:title="@string/swappiness_title"/>
 
     <Preference
-        android:key="pref_vfs"
-        android:title="@string/vfs_title" />
+            android:key="pref_vfs"
+            android:title="@string/vfs_title"/>
 
     <CheckBoxPreference
-        android:defaultValue="false"
-        android:key="vm_sob"
-        android:summary="@string/ps_vm_set_on_boot"
-        android:title="@string/sob" />
+            android:defaultValue="false"
+            android:key="vm_sob"
+            android:summary="@string/ps_vm_set_on_boot"
+            android:title="@string/sob"/>
 
 </PreferenceScreen>

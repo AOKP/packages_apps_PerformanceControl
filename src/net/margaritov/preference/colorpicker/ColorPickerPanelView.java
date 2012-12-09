@@ -27,27 +27,26 @@ import android.view.View;
  * This class draws a panel which which will be filled with a color which can be
  * set. It can be used to show the currently selected color which you will get
  * from the {@link ColorPickerView}.
- * 
+ *
  * @author Daniel Nilsson
- * 
  */
 public class ColorPickerPanelView extends View {
 
     /**
      * The width in pixels of the border surrounding the color panel.
      */
-    private final static float   BORDER_WIDTH_PX = 1;
+    private final static float BORDER_WIDTH_PX = 1;
 
-    private float                mDensity        = 1f;
+    private float mDensity = 1f;
 
-    private int                  mBorderColor    = 0xff6E6E6E;
-    private int                  mColor          = 0xff000000;
+    private int mBorderColor = 0xff6E6E6E;
+    private int mColor = 0xff000000;
 
-    private Paint                mBorderPaint;
-    private Paint                mColorPaint;
+    private Paint mBorderPaint;
+    private Paint mColorPaint;
 
-    private RectF                mDrawingRect;
-    private RectF                mColorRect;
+    private RectF mDrawingRect;
+    private RectF mColorRect;
 
     private AlphaPatternDrawable mAlphaPattern;
 
@@ -60,7 +59,7 @@ public class ColorPickerPanelView extends View {
     }
 
     public ColorPickerPanelView(Context context, AttributeSet attrs,
-            int defStyle) {
+                                int defStyle) {
         super(context, attrs, defStyle);
         init();
     }
@@ -133,7 +132,7 @@ public class ColorPickerPanelView extends View {
 
     /**
      * Set the color that should be shown by this view.
-     * 
+     *
      * @param color
      */
     public void setColor(int color) {
@@ -143,7 +142,7 @@ public class ColorPickerPanelView extends View {
 
     /**
      * Get the color currently show by this view.
-     * 
+     *
      * @return
      */
     public int getColor() {
@@ -152,7 +151,7 @@ public class ColorPickerPanelView extends View {
 
     /**
      * Set the color of the border surrounding the panel.
-     * 
+     *
      * @param color
      */
     public void setBorderColor(int color) {

@@ -16,31 +16,27 @@
 
 package net.margaritov.preference.colorpicker;
 
-import android.graphics.Bitmap;
+import android.graphics.*;
 import android.graphics.Bitmap.Config;
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 
 /**
  * This drawable that draws a simple white and gray chessboard pattern. It's
  * pattern you will often see as a background behind a partly transparent image
  * in many applications.
- * 
+ *
  * @author Daniel Nilsson
  */
 public class AlphaPatternDrawable extends Drawable {
 
-    private int    mRectangleSize = 10;
+    private int mRectangleSize = 10;
 
-    private Paint  mPaint         = new Paint();
-    private Paint  mPaintWhite    = new Paint();
-    private Paint  mPaintGray     = new Paint();
+    private Paint mPaint = new Paint();
+    private Paint mPaintWhite = new Paint();
+    private Paint mPaintGray = new Paint();
 
-    private int    numRectanglesHorizontal;
-    private int    numRectanglesVertical;
+    private int numRectanglesHorizontal;
+    private int numRectanglesVertical;
 
     /**
      * Bitmap in which the pattern will be cahched.

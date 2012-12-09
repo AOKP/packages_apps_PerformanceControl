@@ -18,8 +18,8 @@ Copyright (C) 2012  James Roberts
 -->
 
 <appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
-    android:initialLayout="@layout/widget"
-    android:minHeight="40dp"
-    android:minWidth="40dp"
-    android:resizeMode="horizontal|vertical"
-    android:updatePeriodMillis="0" />
+                    android:initialLayout="@layout/widget"
+                    android:minHeight="40dp"
+                    android:minWidth="40dp"
+                    android:resizeMode="horizontal|vertical"
+                    android:updatePeriodMillis="0"/>
