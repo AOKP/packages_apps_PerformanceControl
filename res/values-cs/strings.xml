@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="app_name">Nastavení výkonu</string>
+    <!-- Main tabs -->
+    <string name="tab_cpu_settings">Nastavení CPU</string>
+    <string name="tab_cpu_profiles">Profily CPU</string>
+    <string name="tab_time_in_state">Čas ve stavech</string>
+    <string name="tab_voltage_settings">Nastavení voltáže</string>
+    <string name="tab_cpu_info">Info o CPU</string>
+    <!-- CPU settings -->
+    <string name="current_speed">Aktuální rychlost</string>
+    <string name="current_max">Aktuální maximum:</string>
+    <string name="current_min">Aktuální minimum:</string>
+    <string name="governor">Governor</string>
+    <string name="io">IO Scheduler</string>
+    <string name="sob">Nastavit při startu</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Zrušit</string>
+    <!-- Other settings -->
+    <string name="prefcat_free_memory">Volná paměť</string>
+    <string name="prefcat_tweaks">Kernel tweaky (pokud jsou podporovány)</string>
+    <string name="prefcat_misc_short">Další</string>
+    <string name="prefcat_read_ahead">Přednačítání z SD</string>
+    <string name="prefcat_vm_settings">Nastavení VM</string>
+    <string name="dt_free_memory">Minfree Taskkiller</string>
+    <string name="dt_read_ahead">Přednačítání z SD</string>
+    <string name="pt_free_memory">Volná paměť</string>
+    <string name="ps_free_memory">Množství paměti, které bude minfree taskkiller udržovat prázdné |
+        Aktuální: %s
+    </string>
+    <string name="ps_free_memory_boot">Použít uvedené množství při startu</string>
+    <string name="pt_read_ahead">Přednačítání SD</string>
+    <string name="ps_read_ahead">Množství v kb pro přednačítání z SD karet |
+        Aktuální: %s
+    </string>
+    <string name="ps_read_ahead_boot">Použít uvedené množství při startu</string>
+    <string name="pt_fast_charge_boot">Rychlé nabíjení</string>
+    <string name="ps_fast_charge_boot">Zapnout rychlé nabíjení při startu</string>
+    <string name="fast_charge_warning">NEBUDE MOŽNÉ PŘIPOJIT TELEFON K PC PO KAŽDÉM STARTU!\n\n
+        Toto nastavení přepne rychlé nabíjení na zapnuto po každém startu. Pokud je zapnuto, telefon je možné *pouze* nabíjet!        
+    </string>
+    <string name="fast_charge_notification_title">Rychlé nabíjení je ZAPNUTO!</string>
+    <string name="fast_charge_notification_message">Telefon je v režimu pouze-nabíjení!</string>
+    <string name="size_25_mb">25mb</string>
+    <string name="size_50_mb">50mb</string>
+    <string name="size_75_mb">75mb</string>
+    <string name="size_80_mb">80mb</string>
+    <string name="size_100_mb">100mb</string>
+    <string name="size_128_kb">128kb</string>
+    <string name="size_256_kb">256kb</string>
+    <string name="size_512_kb">512kb</string>
+    <string name="size_1024_kb">1024kb</string>
+    <string name="size_2048_kb">2048kb</string>
+    <string name="size_4096_kb">4096kb</string>
+    <!-- Voltage control -->
+    <string name="ps_volt_mhz_voltage"> MHz voltáž</string>
+    <string name="ps_volt_save">Uložit</string>
+    <string name="ps_volt_current_voltage">Aktuální voltáž: </string>
+    <string name="ps_volt_setting_to_apply">Nastavení k použití: </string>
+    <string name="pt_volt_control">Nastavení voltáže</string>
+    <string name="ps_volt_control">Nastavit voltáže pro jednotlivé frekvence</string>
+    <string name="apply_values">Použít hodnoty</string>
+    <string name="freq">Frekvence</string>
+    <string name="current">mV aktuálně</string>
+    <string name="saved">mV uloženo</string>
+    <string name="not_supported">Kernel nepodporuje nastavení voltáže</string>
+    <!-- VM settings -->
+    <string name="ps_vm_set_on_boot">Pokud je zapnuto, obnoví nastavení vm po každém startu</string>
+    <string name="dirty_ratio_title">Dirty ratio</string>
+    <string name="dirty_background_title">Dirty background ratio</string>
+    <string name="dirty_expire_title">Dirty expire centisecs</string>
+    <string name="dirty_writeback_title">Dirty writeback centisecs</string>
+    <string name="min_free_title">Minfree kbytes</string>
+    <string name="overcommit_title">Overcommit ratio</string>
+    <string name="swappiness_title">Swappiness</string>
+    <string name="vfs_title">VFS cache pressure</string>
+    <!-- Time in state -->
+    <string name="time_in_state">Časy ve stavech</string>
+    <string name="unused_cpu_states">Nepoužité stavy CPU</string>
+    <string name="total_state_time">Celkový čas stavů</string>
+    <string name="no_states_file_found">Soubor se stavy nenalezen. Opravdu je tento telefon kompatibilní?
+        \n\nPokud je provozována custom ROM nebo kernel, je třeba kontraktovat vývojáře pro informaci, jak přistupovat k těmto stavům.
+    </string>
+    <!-- CPU info -->
+    <string name="kernel_info">Informace o linuxovém kernelu</string>
+    <string name="cpu_info">Informace o CPU</string>
+    <string name="mem_info">Informace o paměti</string>
+    <string name="first_run_title">Nejprve kontrola rootu</string>
+    <string name="su_success_title">Úspěch!</string>
+    <string name="su_failed_title">Hopla!</string>
+    <string name="first_run_message">Aplikace potřebuje ověřit root oprávnění a busybox. OK pro pokračování. Zrušit pro nepovolení root přístupu.</string>
+    <string name="su_success_message">Aplikace získala práva roota a našla busybox. Připraveno k použití!</string>
+    <string name="su_cancel_message">Bylo zakázáno zjišťovat root a busybox. Většina možností nebude přístupná.</string>
+    <string name="su_failed_su_or_busybox">Root přístup selhal nebo nebyl nalezen busybox. Většina možností nebude přístupná.</string>
+    <!-- PC Settings -->
+    <string name="pt_use_light_theme">Použít světlé téma</string>
+    <string name="ps_use_light_theme">Pokud je vybráno, aplikace bude mít světlý vzhled.</string>
+    <string name="pt_widget_bg_color">Barva pozadí widgetu</string>
+    <string name="pt_widget_text_color">Barva textu widgetu</string>
+    <!-- Color picker -->
+    <string name="dialog_color_picker">Výběr barev</string>
+    <string name="press_color_to_apply">Stisknutím aplikovat barvu</string>
+    <string name="arrow_right">›</string>
+    <string name="arrow_down">ˇ</string>
+    <string name="hex">Hex:</string>
+    <string name="hex_hint">#FF000000</string>
+    <string name="set">Nastavit</string>
+    <string name="ics_color">Holo</string>
+
+</resources>
