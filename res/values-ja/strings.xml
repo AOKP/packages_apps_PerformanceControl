@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Performance Control - An Android CPU Control application
+Copyright (C) 2012  James Roberts
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<resources>
+
+    <string name="app_name">パフォーマンス</string>
+    <!-- Main tabs -->
+    <string name="tab_cpu_settings">CPU設定</string>
+    <string name="tab_cpu_profiles">CPUプロファイル</string>
+    <string name="tab_time_in_state">使用時間</string>
+    <string name="tab_voltage_settings">電圧設定</string>
+    <string name="tab_cpu_info">CPU情報</string>
+    <!-- CPU settings -->
+    <string name="current_speed">現在の周波数</string>
+    <string name="current_max">最大周波数:</string>
+    <string name="current_min">最小周波数:</string>
+    <string name="governor">ガバナー</string>
+    <string name="io">IOスケジューラー</string>
+    <string name="sob">起動時に適用</string>
+    <string name="ok">OK</string>
+    <string name="cancel">キャンセル</string>
+    <!-- Other settings -->
+    <string name="prefcat_free_memory">空きメモリ</string>
+    <string name="prefcat_tweaks">カーネル設定 (要対応カーネル)</string>
+    <string name="prefcat_misc_short">その他</string>
+    <string name="prefcat_read_ahead">SDカード先読み</string>
+    <string name="prefcat_vm_settings">VM設定</string>
+    <string name="dt_free_memory">最小空きメモリ</string>
+    <string name="dt_read_ahead">SDカード先読み</string>
+    <string name="pt_free_memory">空きメモリ</string>
+    <string name="ps_free_memory">タスクキラーが確保する最小空きメモリを設定する\n
+        設定値: %s
+    </string>
+    <string name="ps_free_memory_boot">起動時に上記の設定を適用する</string>
+    <string name="pt_read_ahead">SDカード先読み</string>
+    <string name="ps_read_ahead">SDカードの先読み量を設定する\n
+        設定値: %s
+    </string>
+    <string name="ps_read_ahead_boot">起動時に上記の設定を適用する</string>
+    <string name="pt_fast_charge_boot">急速充電</string>
+    <string name="ps_fast_charge_boot">急速充電を有効にする</string>
+    <string name="fast_charge_warning">再起動後はPCに接続できなくなります。\n\n
+        この設定は再起動のたびに急速充電を有効にします。急速充電を有効にしていると充電しかできません。
+    </string>
+    <string name="fast_charge_notification_title">急速充電有効</string>
+    <string name="fast_charge_notification_message">端末は充電しかできません</string>
+    <string name="size_25_mb">25mb</string>
+    <string name="size_50_mb">50mb</string>
+    <string name="size_75_mb">75mb</string>
+    <string name="size_80_mb">80mb</string>
+    <string name="size_100_mb">100mb</string>
+    <string name="size_128_kb">128kb</string>
+    <string name="size_256_kb">256kb</string>
+    <string name="size_512_kb">512kb</string>
+    <string name="size_1024_kb">1024kb</string>
+    <string name="size_2048_kb">2048kb</string>
+    <string name="size_4096_kb">4096kb</string>
+    <!-- Voltage control -->
+    <string name="ps_volt_mhz_voltage">" MHz 電圧"</string>
+    <string name="ps_volt_save">保存</string>
+    <string name="ps_volt_current_voltage">"現在の電圧: "</string>
+    <string name="ps_volt_setting_to_apply">"適用する設定: "</string>
+    <string name="pt_volt_control">電圧設定</string>
+    <string name="ps_volt_control">周波数ごとの電圧を設定する</string>
+    <string name="apply_values">適用</string>
+    <string name="freq">周波数</string>
+    <string name="current">mV current</string>
+    <string name="saved">mV saved</string>
+    <string name="not_supported">カーネルが電圧設定に対応していません</string>
+    <!-- VM settings -->
+    <string name="ps_vm_set_on_boot">有効にすると起動時に全てのVM設定を復元する</string>
+    <string name="dirty_ratio_title">Dirty ratio</string>
+    <string name="dirty_background_title">Dirty background ratio</string>
+    <string name="dirty_expire_title">Dirty expire centisecs</string>
+    <string name="dirty_writeback_title">Dirty writeback centisecs</string>
+    <string name="min_free_title">Minfree kbytes</string>
+    <string name="overcommit_title">Overcommit ratio</string>
+    <string name="swappiness_title">Swappiness</string>
+    <string name="vfs_title">VFS cache pressure</string>
+    <!-- Time in state -->
+    <string name="time_in_state">使用時間</string>
+    <string name="unused_cpu_states">未使用</string>
+    <string name="total_state_time">合計時間</string>
+    <string name="no_states_file_found">ステートファイルが見つかりませんでした。\n\n
+        カスタムROMやカーネルを実行している場合は、ステートファイルが読み取れないことを
+        開発者に連絡してください。
+    </string>
+    <!-- CPU info -->
+    <string name="kernel_info">Linuxカーネル情報</string>
+    <string name="cpu_info">CPU情報</string>
+    <string name="mem_info">メモリ情報</string>
+    <string name="first_run_title">root権限の確認</string>
+    <string name="su_success_title">成功!</string>
+    <string name="su_failed_title">失敗!</string>
+    <string name="first_run_message">アプリケーションはroot権限とbusyboxを確認する必要があります。
+        OKを押せば続行します。root権限を付与したくない場合はキャンセルしてください。
+    </string>
+    <string name="su_success_message">root権限を取得、busyboxを確認できました。
+    </string>
+    <string name="su_cancel_message">root権限を許可しませんでした。
+        ほとんどのオプションはroot権限がないと動作しません。
+    </string>
+    <string name="su_failed_su_or_busybox">root権限の取得に失敗したか、busyboxが見つかりませんでした。
+        ほとんどのオプションはroot権限がないと動作しません。
+    </string>
+    <!-- PC Settings -->
+    <string name="pt_use_light_theme">明るいテーマを使用</string>
+    <string name="ps_use_light_theme">パフォーマンスコントロールにHoloの明るいテーマを使う</string>
+    <string name="pt_widget_bg_color">ウィジェットの背景色</string>
+    <string name="pt_widget_text_color">ウィジェットの文字色</string>
+    <!-- Color picker -->
+    <string name="dialog_color_picker">色選択</string>
+    <string name="press_color_to_apply">色をタップして適用</string>
+    <string name="arrow_right">→</string>
+    <string name="arrow_down">↓</string>
+    <string name="hex">16進:</string>
+    <string name="hex_hint">#FF000000</string>
+    <string name="set">Set</string>
+    <string name="ics_color">Holo</string>
+
+</resources>
