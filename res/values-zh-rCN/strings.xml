@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Performance Control - An Android CPU Control application
+Copyright (C) 2012  James Roberts
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<resources>
+
+    <string name="app_name">性能控制</string>
+    <!-- Main tabs 选项卡标题-->
+    <string name="tab_cpu_settings">"CPU 设置"</string>
+    <string name="tab_cpu_profiles">CPU 配置</string>
+    <string name="tab_time_in_state">"时间统计"</string>
+    <string name="tab_voltage_settings">"电压设置"</string>
+    <string name="tab_cpu_info">CPU 信息</string>
+    <!-- CPU settings CPU 设置-->
+    <string name="current_speed">当前速度</string>
+    <string name="current_max">当前最大：</string>
+    <string name="current_min">当前最小：</string>
+    <string name="governor">调节器</string>
+    <string name="io">IO调度器</string>
+    <string name="sob">启动时应用</string>
+    <string name="ok">确定</string>
+    <string name="cancel">取消</string>
+    <!-- Other settings 其它设置-->
+    <string name="prefcat_free_memory">保留空闲内存</string>
+    <string name="prefcat_tweaks">内核优化（如果支持）</string>
+    <string name="prefcat_misc_short">杂项</string>
+    <string name="prefcat_read_ahead">SD卡预读</string>
+    <string name="prefcat_vm_settings">VM设置</string>
+    <string name="dt_free_memory">保留空闲内存</string>
+    <string name="dt_read_ahead">SD卡预读</string>
+    <string name="pt_free_memory">空闲内存</string>
+    <string name="ps_free_memory">保留空闲内存将保持为 |
+        当前： %s
+    </string>
+    <string name="ps_free_memory_boot">重启后生效</string>
+    <string name="pt_read_ahead">SD卡预读</string>
+    <string name="ps_read_ahead">SD卡预读空间将保持为 |
+        当前： %s
+    </string>
+    <string name="ps_read_ahead_boot">重启后生效</string>
+    <string name="pt_fast_charge_boot">快速充电</string>
+    <string name="ps_fast_charge_boot">重启后生效</string>
+    <string name="fast_charge_warning">开启快速充电后你将无法连接到电脑！\n\n该设置在每次重启后应用。开启后你将*只能*对手机充电！
+    </string>
+    <string name="fast_charge_notification_title">快速充电已开启！</string>
+    <string name="fast_charge_notification_message">手机处于“仅充电”模式！</string>
+    <!-- Voltage control 电压控制-->
+    <string name="ps_volt_mhz_voltage">" MHz 电压"</string>
+    <string name="ps_volt_save">"保存"</string>
+    <string name="ps_volt_current_voltage">"当前电压： "</string>
+    <string name="ps_volt_setting_to_apply">"设置使用： "</string>
+    <string name="pt_volt_control">电压控制</string>
+    <string name="ps_volt_control">为每个频率设置定电压</string>
+    <string name="apply_values">应用值</string>
+    <string name="freq">频率</string>
+    <string name="current">mV 当前</string>
+    <string name="saved">mV 已保存</string>
+    <string name="not_supported">当前内核不支持电压控制</string>
+    <!-- VM settings 虚拟机设置-->
+    <string name="ps_vm_set_on_boot">重启后生效</string>
+    <!-- Time in state 时间统计-->
+    <string name="time_in_state">使用时间</string>
+    <string name="unused_cpu_states">未使用</string>
+    <string name="total_state_time">合计使用</string>
+    <string name="no_states_file_found">找不到状态记录文件文件。请确定设备是否兼容。\n\n如果你使用的自定义ROM或内核，请联系开发者并告知其状态记录文件不可读。
+    </string>
+    <!-- CPU info CPU 信息-->
+    <string name="kernel_info">LINUX 内核信息</string>
+    <string name="cpu_info">CPU 信息</string>
+    <string name="mem_info">内存信息</string>
+    <string name="first_run_title">首先检查root权限</string>
+    <string name="su_success_title">成功！</string>
+    <string name="su_failed_title">我操！</string>
+    <string name="first_run_message">应用程序必须检查root权限和busybox。点击确定继续，点击取消不检查root权限。</string>
+    <string name="su_success_message">性能控制能够使用root权限并已找到busybox。走你！</string>
+    <string name="su_cancel_message">你选择不检查root权限和busybox。很多选项没有root权限将无法正常使用，抱歉！</string>
+    <string name="su_failed_su_or_busybox">获取root权限失败或找不到busybox。要使操作生效必须拥有root权限。抱歉！</string>
+    <!-- PC Settings -->
+    <string name="pt_use_light_theme">使用light主题</string>
+    <string name="ps_use_light_theme">选中后将使用 Holo light 主题</string>
+    <string name="pt_widget_bg_color">小部件背景颜色</string>
+    <string name="pt_widget_text_color">小部件文本颜色</string>
+    <!-- Color picker -->
+    <string name="dialog_color_picker">颜色选择器</string>
+    <string name="press_color_to_apply">点击颜色应用</string>
+    <string name="arrow_right">→</string>
+    <string name="arrow_down">↓</string>
+    <string name="hex">Hex:</string>
+    <string name="hex_hint">#FF000000</string>
+    <string name="set">设置</string>
+    <string name="ics_color">默认</string>
+
+</resources>
