@@ -26,6 +26,17 @@ Copyright (C) 2012  James Roberts
     <string name="tab_time_in_state">"时间统计"</string>
     <string name="tab_voltage_settings">"电压设置"</string>
     <string name="tab_cpu_info">CPU 信息</string>
+    <!-- Titles 标题-->
+    <string name="t_cpu_settings">"CPU 设置"</string>
+    <string name="t_volt_settings">"电压设置"</string>
+    <string name="t_adv_settings">"高级设置"</string>
+    <string name="t_time_in_state">"时间统计"</string>
+    <string name="t_cpu_info">"CPU 信息"</string>
+    <!-- Menu 菜单-->
+    <string name="mt_refresh">刷新</string>
+    <string name="mt_app_settings">设置</string>
+    <string name="mt_reset">重置</string>
+    <string name="mt_restore">恢复</string>
     <!-- CPU settings CPU 设置-->
     <string name="current_speed">当前速度</string>
     <string name="current_max">当前最大：</string>
@@ -77,8 +88,11 @@ Copyright (C) 2012  James Roberts
     <string name="time_in_state">使用时间</string>
     <string name="unused_cpu_states">未使用</string>
     <string name="total_state_time">合计使用</string>
-    <string name="no_states_file_found">找不到状态记录文件文件。请确定设备是否兼容。\n\n如果你使用的自定义ROM或内核，请联系开发者并告知其状态记录文件不可读。
+    <string name="no_states_file_found">找不到状态记录文件文件。
+    请确定设备是否兼容。
+    \n\n如果你使用的自定义ROM或内核，请联系开发者并告知其状态记录文件不可读。
     </string>
+    <string name="deep_sleep">深度睡眠</string>
     <!-- CPU info CPU 信息-->
     <string name="kernel_info">LINUX 内核信息</string>
     <string name="cpu_info">CPU 信息</string>
@@ -95,6 +109,7 @@ Copyright (C) 2012  James Roberts
     <string name="ps_use_light_theme">选中后将使用 Holo light 主题</string>
     <string name="pt_widget_bg_color">小部件背景颜色</string>
     <string name="pt_widget_text_color">小部件文本颜色</string>
+    <string name="pt_ver">"版本 - "</string>
     <!-- Color picker -->
     <string name="dialog_color_picker">颜色选择器</string>
     <string name="press_color_to_apply">点击颜色应用</string>

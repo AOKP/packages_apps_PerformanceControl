@@ -52,7 +52,7 @@ public class PCSettings extends PreferenceActivity implements Constants,
         mWidgetTextColorPref.setOnPreferenceChangeListener(this);
 
         mVersion = (Preference) findPreference("version_info");
-        mVersion.setTitle("Version - " + VERSION_NUM);
+        mVersion.setTitle(getString(R.string.pt_ver) + VERSION_NUM);
 
         setTheme();
     }

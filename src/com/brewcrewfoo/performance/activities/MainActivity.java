@@ -233,11 +233,18 @@ public class MainActivity extends Activity implements Constants,
     private String[] getTitles() {
         String titleString[];
         if (mVoltageExists) {
-            titleString = new String[]{"CPU SETTINGS", "VOLTAGE SETTINGS",
-                    "ADVANCED SETTINGS", "TIME IN STATE", "CPU INFO"};
+            titleString = new String[]{
+                    getString(R.string.t_cpu_settings),
+                    getString(R.string.t_volt_settings),
+                    getString(R.string.t_adv_settings),
+                    getString(R.string.t_time_in_state),
+                    getString(R.string.t_cpu_info)};
         } else {
-            titleString = new String[]{"CPU SETTINGS", "ADVANCED SETTINGS",
-                    "TIME IN STATE", "CPU INFO"};
+            titleString = new String[]{
+                    getString(R.string.t_cpu_settings),
+                    getString(R.string.t_adv_settings),
+                    getString(R.string.t_time_in_state),
+                    getString(R.string.t_cpu_info)};
         }
         return titleString;
     }

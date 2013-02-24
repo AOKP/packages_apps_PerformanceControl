@@ -5,10 +5,10 @@
             android:id="@+id/refresh"
             android:icon="@drawable/ic_menu_refresh"
             android:showAsAction="always"
-            android:title="Refresh"/>
+            android:title="@string/mt_refresh"/>
     <item
             android:id="@+id/app_settings"
             android:showAsAction="never"
-            android:title="App Settings"/>
+            android:title="@string/mt_app_settings"/>
 
 </menu>

@@ -26,6 +26,17 @@ Copyright (C) 2012  James Roberts
     <string name="tab_time_in_state">"Time In State"</string>
     <string name="tab_voltage_settings">"Voltage Settings"</string>
     <string name="tab_cpu_info">CPU Info</string>
+    <!-- Titles -->
+    <string name="t_cpu_settings">"CPU SETTINGS"</string>
+    <string name="t_volt_settings">"VOLTAGE SETTINGS"</string>
+    <string name="t_adv_settings">"ADVANCED SETTINGS"</string>
+    <string name="t_time_in_state">"TIME IN STATE"</string>
+    <string name="t_cpu_info">"CPU INFO"</string>
+    <!-- Menu -->
+    <string name="mt_refresh">Refresh</string>
+    <string name="mt_app_settings">"App Settings"</string>
+    <string name="mt_reset">Reset</string>
+    <string name="mt_restore">Restore</string>
     <!-- CPU settings -->
     <string name="current_speed">Current Speed</string>
     <string name="current_max">Current max:</string>
@@ -103,6 +114,7 @@ Copyright (C) 2012  James Roberts
         contacting its developer to inform him that the states file is not
         readable.
     </string>
+    <string name="deep_sleep">"Deep Sleep"</string>
     <!-- CPU info -->
     <string name="kernel_info">LINUX KERNEL INFORMATION</string>
     <string name="cpu_info">CPU INFORMATION</string>
@@ -128,6 +140,7 @@ Copyright (C) 2012  James Roberts
     <string name="ps_use_light_theme">If checked, Performance Control will use a Holo light theme</string>
     <string name="pt_widget_bg_color">Widget bg color</string>
     <string name="pt_widget_text_color">Widget text color</string>
+    <string name="pt_ver">"Version - "</string>
     <!-- Color picker -->
     <string name="dialog_color_picker">Color Picker</string>
     <string name="press_color_to_apply">Press on Color to apply</string>

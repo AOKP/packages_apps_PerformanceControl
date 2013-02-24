@@ -5,18 +5,18 @@
             android:id="@+id/refresh"
             android:icon="@drawable/ic_menu_refresh"
             android:showAsAction="always"
-            android:title="Refresh"/>
+            android:title="@string/mt_refresh"/>
     <item
             android:id="@+id/reset"
             android:showAsAction="never"
-            android:title="Reset"/>
+            android:title="@string/mt_reset"/>
     <item
             android:id="@+id/restore"
             android:showAsAction="never"
-            android:title="Restore"/>
+            android:title="@string/mt_restore"/>
     <item
             android:id="@+id/app_settings"
             android:showAsAction="never"
-            android:title="App Settings"/>
+            android:title="@string/mt_app_settings"/>
 
 </menu>

@@ -139,7 +139,7 @@ public class TimeInState extends Fragment implements Constants {
                 generateStateRow(state, mStatesView);
             } else {
                 if (state.freq == 0) {
-                    extraStates.add("Deep Sleep");
+                    extraStates.add(getString(R.string.deep_sleep));
                 } else {
                     extraStates.add(state.freq / 1000 + " MHz");
                 }
@@ -207,7 +207,7 @@ public class TimeInState extends Fragment implements Constants {
 
         String sFreq;
         if (state.freq == 0) {
-            sFreq = "Deep Sleep";
+            sFreq = getString(R.string.deep_sleep);
         } else {
             sFreq = state.freq / 1000 + " MHz";
         }
