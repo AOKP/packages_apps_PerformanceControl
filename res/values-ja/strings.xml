@@ -26,6 +26,17 @@ Copyright (C) 2012  James Roberts
     <string name="tab_time_in_state">使用時間</string>
     <string name="tab_voltage_settings">電圧設定</string>
     <string name="tab_cpu_info">CPU情報</string>
+    <!-- Titles -->
+    <string name="t_cpu_settings">"CPU SETTINGS"</string>
+    <string name="t_volt_settings">"VOLTAGE SETTINGS"</string>
+    <string name="t_adv_settings">"ADVANCED SETTINGS"</string>
+    <string name="t_time_in_state">"TIME IN STATE"</string>
+    <string name="t_cpu_info">"CPU INFO"</string>
+    <!-- Menu -->
+    <string name="mt_refresh">リフレッシュ</string>
+    <string name="mt_app_settings">"アプリ設定"</string>
+    <string name="mt_reset">リセット</string>
+    <string name="mt_restore">リストア</string>
     <!-- CPU settings -->
     <string name="current_speed">現在の周波数</string>
     <string name="current_max">最大周波数:</string>
@@ -101,6 +112,7 @@ Copyright (C) 2012  James Roberts
         カスタムROMやカーネルを実行している場合は、ステートファイルが読み取れないことを
         開発者に連絡してください。
     </string>
+    <string name="deep_sleep">"Deep Sleep"</string>
     <!-- CPU info -->
     <string name="kernel_info">Linuxカーネル情報</string>
     <string name="cpu_info">CPU情報</string>
@@ -124,6 +136,7 @@ Copyright (C) 2012  James Roberts
     <string name="ps_use_light_theme">パフォーマンスコントロールにHoloの明るいテーマを使う</string>
     <string name="pt_widget_bg_color">ウィジェットの背景色</string>
     <string name="pt_widget_text_color">ウィジェットの文字色</string>
+    <string name="pt_ver">"バージョン - "</string>
     <!-- Color picker -->
     <string name="dialog_color_picker">色選択</string>
     <string name="press_color_to_apply">色をタップして適用</string>
