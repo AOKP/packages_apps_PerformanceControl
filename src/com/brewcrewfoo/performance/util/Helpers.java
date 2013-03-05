@@ -296,6 +296,9 @@ public class Helpers implements Constants {
         } else if (new File(VDD_SYSFS_PATH).exists()) {
             setVoltagePath(VDD_SYSFS_PATH);
             return true;
+        } else if (new File(COMMON_VDD_PATH).exists()) {
+            setVoltagePath(COMMON_VDD_PATH);
+            return true;
         }
         return false;
     }
